@@ -1,0 +1,527 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.8)  8 JUL 2018 11:36
+entering extended mode
+**C:/Dropbox/repos/newlistok/list03__Dir_sol.tex
+(C:/Dropbox/repos/newlistok/list03__Dir_sol.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\Full_TeX\texmf\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(C:\Full_TeX\texmf\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Dropbox\repos\newlistok\newlistok.sty
+Package: newlistok 2017/08/21 v7.07 Shashkov's list style package
+
+|----------------------------------------------------------------------|
+|New package for lists in math school. Version: 7.07; Date: 2017/08/21.|
+|All questions to Sergey Shashkov, sh57@yandex.ru. Thank you! Be happy!|
+|----------------------------------------------------------------------|
+(C:\Full_TeX\texmf\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(C:\Full_TeX\texmf\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(C:\Full_TeX\texmf\tex\latex\amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(C:\Full_TeX\texmf\tex\latex\epsf\epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen112
+\epsfframethickness=\dimen113
+\epsfrsize=\dimen114
+\epsftmp=\dimen115
+\epsftsize=\dimen116
+\epsfxsize=\dimen117
+\epsfysize=\dimen118
+\pspoints=\dimen119
+) (C:\Full_TeX\texmf\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Full_TeX\texmf\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(C:\Full_TeX\texmf\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Full_TeX\texmf\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\Full_TeX\texmf\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(C:\Full_TeX\texmf\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(C:\Full_TeX\texmf\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(C:\Full_TeX\texmf\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+(C:\Full_TeX\texmf\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(C:\Full_TeX\texmf\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(C:\Full_TeX\texmf\tex\latex\framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip46
+\fb@frw=\dimen122
+\fb@frh=\dimen123
+\FrameRule=\dimen124
+\FrameSep=\dimen125
+)
+(C:\Full_TeX\texmf\tex\latex\base\inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
+
+(C:\Full_TeX\texmf\tex\latex\cyrillic\cp1251.def
+File: cp1251.def 1999/11/16 v1.0d Input encoding file
+))
+(C:\Full_TeX\texmf\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Full_TeX\texmf\tex\latex\bbding\bbding.sty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
+)
+(C:\Full_TeX\texmf\tex\latex\marginnote\marginnote.sty
+Package: marginnote 2012/03/29 v1.1i non floating margin notes for LaTeX
+\c@mn@abspage=\count100
+)
+(C:\Full_TeX\texmf\tex\latex\base\textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(C:\Full_TeX\texmf\tex\latex\base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(C:\Full_TeX\texmf\tex\latex\cyrillic\t2aenc.def
+File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
+)
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 73.
+
+(C:\Full_TeX\texmf\tex\latex\cyrillic\t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+\@hoZ=\skip47
+\@omZ=\skip48
+\@emZ=\skip49
+\@voZ=\skip50
+\@tmZ=\skip51
+\@hhZ=\skip52
+\@hsZ=\skip53
+\@twZ=\skip54
+\@thZ=\skip55
+\@inZ=\skip56
+\@oldbls=\skip57
+\@oldls=\skip58
+\@oldlsl=\skip59
+\symrsfs=\mathgroup6
+\@tmp=\skip60
+\@ttmp=\skip61
+\@tttmp=\skip62
+\c@problemnum=\count101
+\c@itemnum=\count102
+\c@definitionnum=\count103
+\@graybox=\box28
+\@rosebox=\box29
+\@lightgraybox=\box30
+\@conduitblock=\box31
+\@conduitsave=\box32
+\c@@TotalItems=\count104
+\c@@TotalProblems=\count105
+\c@@studentnum=\count106
+\@TableFiller=\toks23
+\@TableColumns=\toks24
+\@ProblemNumbers=\toks25
+\@ItemNumbers=\toks26
+\@LogbookTitle=\toks27
+\@complexity=\toks28
+\@filename=\toks29
+\@cell=\toks30
+\список=\toks31
+\пометка=\toks32
+\@xmlTableW=\toks33
+\@cellHeight=\skip63
+\@cellWidth=\skip64
+\@LogbookHeight=\skip65
+\@LogbookWidth=\skip66
+\@LogbookBox=\box33
+\@dprobl=\count107
+\@dpunct=\count108
+\@listname=\toks34
+\@abovelistnum=\toks35
+\@marksborders=\toks36
+\@listsubname=\toks37
+\@listnum=\toks38
+\@listEpigraph=\toks39
+\@listEpigraphh=\toks40
+\@sobnum=\toks41
+\@listdate=\toks42
+\@star=\toks43
+\@impstar=\toks44
+\@wrtstar=\toks45
+\theFullListok=\toks46
+\theFullTitle=\toks47
+\theFullDate=\toks48
+\@starspace=\skip67
+\@SpaceBeforeItem=\skip68
+\@SpaceAfterItem=\skip69
+\@strutdepth=\skip70
+\@strutheight=\skip71
+\c@globalnum=\count109
+\lecttitle=\toks49
+\lectauthor=\toks50
+\c@аксиомаnum=\count110
+\c@теоремаnum=\count111
+\c@леммаnum=\count112
+\c@предложениеnum=\count113
+\c@определениеnum=\count114
+\c@примерnum=\count115
+\c@упражнениеnum=\count116
+\c@замечаниеnum=\count117
+\c@утверждениеnum=\count118
+\c@фактnum=\count119
+\c@следствиеnum=\count120
+\c@соглашениеnum=\count121
+\c@figcount=\count122
+\dmvnpicbox=\box34
+\dmvnpicborder=\dimen126
+\blok=\box35
+\blokk=\box36
+\copycount=\count123
+LaTeX Info: Redefining \ч on input line 2518.
+\symrletters=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `rletters' in version `bold'
+(Font)                  T2A/cmr/m/it --> T2A/cmr/b/it on input line 2539.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmr/m/n --> T2A/cmr/m/n on input line 2613.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T2A/cmr/b/n on input line 2614.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T2A/cmr/m/it on input line 2615.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T2A/cmr/b/it on input line 2616.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T2A/cmr/b/n on input line 2617.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T2A/cmr/b/n on input line 2618.
+
+
+ Correcting math definitions,
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 2659.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 2659.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 2660.
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 2661.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 2662.
+ heading names, counters, lists,
+\c@rlistctr=\count124
+ headings,
+captions, theorems, running heads, appendix, \cleardoublepage, quotes,
+... finished.) (C:\Dropbox\repos\newlistok\list03__Dir_sol.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 12.
+
+(C:\Full_TeX\texmf\tex\latex\base\ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+
+(C:\Full_TeX\texmf\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count125
+\scratchdimen=\dimen127
+\scratchbox=\box37
+\nofMPsegments=\count126
+\nofMParguments=\count127
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count128
+\MPscratchDim=\dimen128
+\MPnumerator=\count129
+\makeMPintoPDFobject=\count130
+\everyMPtoPDFconversion=\toks52
+)
+Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
+(marginnote)             Extended position detection mode activated.
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+ (C:\Full_TeX\texmf\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+
+(C:\Full_TeX\texmf\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 18.
+
+(C:\Full_TeX\texmf\tex\latex\jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 18.
+
+
+(C:\Full_TeX\texmf\tex\latex\cyrillic\t2acmss.fd
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (56.0418pt too wide) detected at line 18
+[]
+ []
+
+[1
+
+{C:/Full_TeX/texmf/pdftex/config/pdftex.map}]
+Overfull \hbox (15.335pt too wide) in paragraph at lines 77--78
+\T2A/cmr/m/n/12 на $\OT1/cmr/m/n/12 1 + 2 + [] + 50 = [] = 25 \OMS/cmsy/m/n/12 
+ \OT1/cmr/m/n/12 51$\T2A/cmr/m/n/12 . При-ба-вив об-рат-но ис-ко-мые чис-ла, п
+о-лу-чим, $\OT1/cmr/m/n/12 25 \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 51 + 25 \OMS/c
+msy/m/n/12  \OT1/cmr/m/n/12 50 = 25 \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 101 = 2
+525$\T2A/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (56.0418pt too wide) has occurred while \output is active
+[]
+ []
+
+[2]
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 1
+33.
+
+
+LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 1
+33.
+
+Missing character: There is no · in font cmr12!
+
+Overfull \hbox (56.0418pt too wide) has occurred while \output is active
+[]
+ []
+
+[3] (C:\Dropbox\repos\newlistok\list03__Dir_sol.aux) ) 
+Here is how much of TeX's memory you used:
+ 5256 strings out of 493921
+ 58659 string characters out of 3151364
+ 127077 words of memory out of 3000000
+ 8491 multiletter control sequences out of 15000+200000
+ 15807 words of font info for 44 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 34i,12n,37p,671b,196s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Full_TeX/texmf/fonts/
+enc/dvips/cm-super/cm-super-t2a.enc}<C:/Full_TeX/texmf/fonts/type1/public/amsfo
+nts/cm/cmex10.pfb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
+<C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Full_TeX/texmf/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Full_TeX/texmf/fonts/type1/public/
+amsfonts/cm/cmr8.pfb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Full_TeX/tex
+mf/fonts/type1/public/amsfonts/symbols/msam10.pfb><C:/Full_TeX/texmf/fonts/type
+1/public/cm-super/sfrb1200.pfb><C:/Full_TeX/texmf/fonts/type1/public/cm-super/s
+frm1200.pfb><C:/Full_TeX/texmf/fonts/type1/public/cm-super/sfss1200.pfb><C:/Ful
+l_TeX/texmf/fonts/type1/public/cm-super/sfss1440.pfb><C:/Full_TeX/texmf/fonts/t
+ype1/public/cm-super/sfti1200.pfb>
+Output written on list03__Dir_sol.pdf (3 pages, 175705 bytes).
+PDF statistics:
+ 78 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

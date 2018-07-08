@@ -1,0 +1,810 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.8)  8 JUL 2018 11:35
+entering extended mode
+**C:/Dropbox/repos/newlistok/list01__Geom_sum.tex
+(C:/Dropbox/repos/newlistok/list01__Geom_sum.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\Full_TeX\texmf\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(C:\Full_TeX\texmf\tex\latex\base\size12.clo
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Dropbox\repos\newlistok\newlistok.sty
+Package: newlistok 2017/08/21 v7.07 Shashkov's list style package
+
+|----------------------------------------------------------------------|
+|New package for lists in math school. Version: 7.07; Date: 2017/08/21.|
+|All questions to Sergey Shashkov, sh57@yandex.ru. Thank you! Be happy!|
+|----------------------------------------------------------------------|
+(C:\Full_TeX\texmf\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks14
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(C:\Full_TeX\texmf\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(C:\Full_TeX\texmf\tex\latex\amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen103
+))
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(C:\Full_TeX\texmf\tex\latex\amsmath\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks16
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks17
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(C:\Full_TeX\texmf\tex\latex\epsf\epsf.sty
+This is `epsf.tex' v2.7.4 <14 February 2011>
+\epsffilein=\read1
+\epsfframemargin=\dimen112
+\epsfframethickness=\dimen113
+\epsfrsize=\dimen114
+\epsftmp=\dimen115
+\epsftsize=\dimen116
+\epsfxsize=\dimen117
+\epsfysize=\dimen118
+\pspoints=\dimen119
+) (C:\Full_TeX\texmf\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Full_TeX\texmf\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(C:\Full_TeX\texmf\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Full_TeX\texmf\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(C:\Full_TeX\texmf\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(C:\Full_TeX\texmf\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(C:\Full_TeX\texmf\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(C:\Full_TeX\texmf\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
+)
+(C:\Full_TeX\texmf\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(C:\Full_TeX\texmf\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+(C:\Full_TeX\texmf\tex\latex\framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip46
+\fb@frw=\dimen122
+\fb@frh=\dimen123
+\FrameRule=\dimen124
+\FrameSep=\dimen125
+)
+(C:\Full_TeX\texmf\tex\latex\base\inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks21
+\inpenc@posthook=\toks22
+
+(C:\Full_TeX\texmf\tex\latex\cyrillic\cp1251.def
+File: cp1251.def 1999/11/16 v1.0d Input encoding file
+))
+(C:\Full_TeX\texmf\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Full_TeX\texmf\tex\latex\bbding\bbding.sty
+Package: bbding 1999/04/15 v1.01 Dingbats symbols
+)
+(C:\Full_TeX\texmf\tex\latex\marginnote\marginnote.sty
+Package: marginnote 2012/03/29 v1.1i non floating margin notes for LaTeX
+\c@mn@abspage=\count100
+)
+(C:\Full_TeX\texmf\tex\latex\base\textcomp.sty
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+(C:\Full_TeX\texmf\tex\latex\base\ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+(C:\Full_TeX\texmf\tex\latex\cyrillic\t2aenc.def
+File: t2aenc.def 2005/09/27 v1.0i Cyrillic encoding definition file
+)
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 73.
+
+(C:\Full_TeX\texmf\tex\latex\cyrillic\t2acmr.fd
+File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+(C:\Full_TeX\texmf\tex\latex\pgf\frontendlayer\tikz.sty
+(C:\Full_TeX\texmf\tex\latex\pgf\basiclayer\pgf.sty
+(C:\Full_TeX\texmf\tex\latex\pgf\utilities\pgfrcs.sty
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks23
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgfutil-latex.def
+\pgfutil@abb=\box28
+
+(C:\Full_TeX\texmf\tex\latex\ms\everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgfrcs.code.tex
+Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+))
+Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+
+(C:\Full_TeX\texmf\tex\latex\pgf\basiclayer\pgfcore.sty
+(C:\Full_TeX\texmf\tex\latex\pgf\systemlayer\pgfsys.sty
+(C:\Full_TeX\texmf\tex\generic\pgf\systemlayer\pgfsys.code.tex
+Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
+
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks26
+))
+\pgf@x=\dimen126
+\pgf@y=\dimen127
+\pgf@xa=\dimen128
+\pgf@ya=\dimen129
+\pgf@xb=\dimen130
+\pgf@yb=\dimen131
+\pgf@xc=\dimen132
+\pgf@yc=\dimen133
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count101
+\c@pgf@countb=\count102
+\c@pgf@countc=\count103
+\c@pgf@countd=\count104
+
+(C:\Full_TeX\texmf\tex\generic\pgf\systemlayer\pgf.cfg
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+
+(C:\Full_TeX\texmf\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+
+(C:\Full_TeX\texmf\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+)))
+(C:\Full_TeX\texmf\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+\pgfsyssoftpath@smallbuffer@items=\count105
+\pgfsyssoftpath@bigbuffer@items=\count106
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+))
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcore.code.tex
+Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmath.code.tex
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathcalc.code.tex
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathutil.code.tex)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen134
+\pgfmath@count=\count107
+\pgfmath@box=\box29
+\pgfmath@toks=\toks27
+\pgfmath@stack@operand=\toks28
+\pgfmath@stack@operation=\toks29
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.code.tex
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+) (C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.random.code.tex)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.base.code.tex)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.round.code.tex)
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex)))
+(C:\Full_TeX\texmf\tex\generic\pgf\math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count108
+))
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
+\pgf@picminx=\dimen135
+\pgf@picmaxx=\dimen136
+\pgf@picminy=\dimen137
+\pgf@picmaxy=\dimen138
+\pgf@pathminx=\dimen139
+\pgf@pathmaxx=\dimen140
+\pgf@pathminy=\dimen141
+\pgf@pathmaxy=\dimen142
+\pgf@xx=\dimen143
+\pgf@xy=\dimen144
+\pgf@yx=\dimen145
+\pgf@yy=\dimen146
+\pgf@zx=\dimen147
+\pgf@zy=\dimen148
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
+\pgf@path@lastx=\dimen149
+\pgf@path@lasty=\dimen150
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
+\pgf@shorten@end@additional=\dimen151
+\pgf@shorten@start@additional=\dimen152
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+\pgfpic=\box30
+\pgf@hbox=\box31
+\pgf@layerbox@main=\box32
+\pgf@picture@serial@count=\count109
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
+\pgflinewidth=\dimen153
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
+\pgf@pt@x=\dimen154
+\pgf@pt@y=\dimen155
+\pgf@pt@temp=\dimen156
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
+\pgf@max=\dimen157
+\pgf@sys@shading@range@num=\count110
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+\pgfexternal@startupbox=\box33
+))
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+)))
+(C:\Full_TeX\texmf\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+\pgfnodeparttextbox=\box34
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
+)
+(C:\Full_TeX\texmf\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen158
+\pgf@nodesepend=\dimen159
+)
+(C:\Full_TeX\texmf\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
+))
+(C:\Full_TeX\texmf\tex\latex\pgf\utilities\pgffor.sty
+(C:\Full_TeX\texmf\tex\latex\pgf\utilities\pgfkeys.sty
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgfkeys.code.tex))
+(C:\Full_TeX\texmf\tex\generic\pgf\utilities\pgffor.code.tex
+Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
+\pgffor@iter=\dimen160
+\pgffor@skip=\dimen161
+\pgffor@stack=\toks30
+\pgffor@toks=\toks31
+))
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+
+(C:\Full_TeX\texmf\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+\pgf@plot@mark@count=\count111
+\pgfplotmarksize=\dimen162
+)
+\tikz@lastx=\dimen163
+\tikz@lasty=\dimen164
+\tikz@lastxsaved=\dimen165
+\tikz@lastysaved=\dimen166
+\tikzleveldistance=\dimen167
+\tikzsiblingdistance=\dimen168
+\tikz@figbox=\box35
+\tikz@tempbox=\box36
+\tikztreelevel=\count112
+\tikznumberofchildren=\count113
+\tikznumberofcurrentchild=\count114
+\tikz@fig@count=\count115
+
+(C:\Full_TeX\texmf\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+\pgfmatrixcurrentrow=\count116
+\pgfmatrixcurrentcolumn=\count117
+\pgf@matrix@numberofcolumns=\count118
+)
+\tikz@expandcount=\count119
+
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopa
+ths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+)))
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc
+.code.tex
+File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarythro
+ugh.code.tex
+File: tikzlibrarythrough.code.tex 2008/02/03 v2.10 (rcs-revision 1.1)
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryinte
+rsections.code.tex
+(C:\Full_TeX\texmf\tex\generic\pgf\libraries\pgflibraryintersections.code.tex
+\pgf@intersect@solutions=\count120
+))
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryback
+grounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2010/02/08 v2.10 (rcs-revision 1.2)
+\pgf@layerbox@background=\box37
+\pgf@layerboxsaved@background=\box38
+)
+(C:\Full_TeX\texmf\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarro
+ws.code.tex
+File: tikzlibraryarrows.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
+
+(C:\Full_TeX\texmf\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2008/10/27 v2.10 (rcs-revision 1.9)
+\arrowsize=\dimen169
+))
+\@hoZ=\skip47
+\@omZ=\skip48
+\@emZ=\skip49
+\@voZ=\skip50
+\@tmZ=\skip51
+\@hhZ=\skip52
+\@hsZ=\skip53
+\@twZ=\skip54
+\@thZ=\skip55
+\@inZ=\skip56
+\@oldbls=\skip57
+\@oldls=\skip58
+\@oldlsl=\skip59
+\symrsfs=\mathgroup6
+\@tmp=\skip60
+\@ttmp=\skip61
+\@tttmp=\skip62
+\c@problemnum=\count121
+\c@itemnum=\count122
+\c@definitionnum=\count123
+\@graybox=\box39
+\@rosebox=\box40
+\@lightgraybox=\box41
+\@conduitblock=\box42
+\@conduitsave=\box43
+\c@@TotalItems=\count124
+\c@@TotalProblems=\count125
+\c@@studentnum=\count126
+\@TableFiller=\toks32
+\@TableColumns=\toks33
+\@ProblemNumbers=\toks34
+\@ItemNumbers=\toks35
+\@LogbookTitle=\toks36
+\@complexity=\toks37
+\@filename=\toks38
+\@cell=\toks39
+\список=\toks40
+\пометка=\toks41
+\@xmlTableW=\toks42
+\@cellHeight=\skip63
+\@cellWidth=\skip64
+\@LogbookHeight=\skip65
+\@LogbookWidth=\skip66
+\@LogbookBox=\box44
+\@dprobl=\count127
+\@dpunct=\count128
+\@listname=\toks43
+\@abovelistnum=\toks44
+\@marksborders=\toks45
+\@listsubname=\toks46
+\@listnum=\toks47
+\@listEpigraph=\toks48
+\@listEpigraphh=\toks49
+\@sobnum=\toks50
+\@listdate=\toks51
+\@star=\toks52
+\@impstar=\toks53
+\@wrtstar=\toks54
+\theFullListok=\toks55
+\theFullTitle=\toks56
+\theFullDate=\toks57
+\@starspace=\skip67
+\@SpaceBeforeItem=\skip68
+\@SpaceAfterItem=\skip69
+\@strutdepth=\skip70
+\@strutheight=\skip71
+\c@globalnum=\count129
+\lecttitle=\toks58
+\lectauthor=\toks59
+\c@аксиомаnum=\count130
+\c@теоремаnum=\count131
+\c@леммаnum=\count132
+\c@предложениеnum=\count133
+\c@определениеnum=\count134
+\c@примерnum=\count135
+\c@упражнениеnum=\count136
+\c@замечаниеnum=\count137
+\c@утверждениеnum=\count138
+\c@фактnum=\count139
+\c@следствиеnum=\count140
+\c@соглашениеnum=\count141
+\c@figcount=\count142
+\dmvnpicbox=\box45
+\dmvnpicborder=\dimen170
+\blok=\box46
+\blokk=\box47
+\copycount=\count143
+LaTeX Info: Redefining \ч on input line 2518.
+\symrletters=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `rletters' in version `bold'
+(Font)                  T2A/cmr/m/it --> T2A/cmr/b/it on input line 2539.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/cmr/m/n --> T2A/cmr/m/n on input line 2613.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T2A/cmr/b/n on input line 2614.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T2A/cmr/m/it on input line 2615.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T2A/cmr/b/it on input line 2616.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T2A/cmr/b/n on input line 2617.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T2A/cmr/b/n on input line 2618.
+
+
+ Correcting math definitions,
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/msa/m/n on input line 2659.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 2659.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/msb/m/n on input line 2659.
+LaTeX Font Info:    Redeclaring math symbol \varkappa on input line 2660.
+LaTeX Font Info:    Redeclaring math symbol \leqslant on input line 2661.
+LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 2662.
+ heading names, counters, lists,
+\c@rlistctr=\count144
+ headings,
+captions, theorems, running heads, appendix, \cleardoublepage, quotes,
+... finished.) (C:\Dropbox\repos\newlistok\list01__Geom_sum.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 9.
+
+(C:\Full_TeX\texmf\tex\latex\base\ts1cmr.fd
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+
+(C:\Full_TeX\texmf\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count145
+\scratchdimen=\dimen171
+\scratchbox=\box48
+\nofMPsegments=\count146
+\nofMParguments=\count147
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count148
+\MPscratchDim=\dimen172
+\MPnumerator=\count149
+\makeMPintoPDFobject=\count150
+\everyMPtoPDFconversion=\toks61
+)
+Package marginnote Info: \pdfoutput not 0 and \pdflastxpos available.
+(marginnote)             Extended position detection mode activated.
+ ABD: EveryShipout initializing macros
+LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+
+(C:\Full_TeX\texmf\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+
+(C:\Full_TeX\texmf\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 18.
+
+(C:\Full_TeX\texmf\tex\latex\jknappen\ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 18.
+
+
+(C:\Full_TeX\texmf\tex\latex\cyrillic\t2acmss.fd
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
+Overfull \hbox (56.0418pt too wide) detected at line 18
+[]
+ []
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 22.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 22.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 22.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 22.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 22.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 34.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 34.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 34.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 34.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 35.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 35.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 35.
+
+
+LaTeX Font Warning: Command \scriptsize invalid in math mode on input line 35.
+
+Package marginnote Info: Margin note 1.1 is on absolute page 1
+(marginnote)              on input line 144.
+Package marginnote Info: right page because not two side mode on input line 144
+.
+Package marginnote Info: xpos seems to be 96.45479pt,
+(marginnote)             \marginnoterightadjust ignored on input line 144.
+
+Overfull \hbox (2.07617pt too wide) in paragraph at lines 147--148
+\T2A/cmr/m/n/12 те фор-му-лу для сум-мы квад- 
+ []
+
+
+Overfull \hbox (277.84581pt too wide) detected at line 278
+[]
+ []
+
+[1
+
+{C:/Full_TeX/texmf/pdftex/config/pdftex.map}]
+(C:\Dropbox\repos\newlistok\list01__Geom_sum.aux) ) 
+Here is how much of TeX's memory you used:
+ 13698 strings out of 493921
+ 234285 string characters out of 3151364
+ 362135 words of memory out of 3000000
+ 16711 multiletter control sequences out of 15000+200000
+ 31555 words of font info for 85 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 63i,13n,57p,518b,851s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Full_TeX/texmf/fonts/enc
+/dvips/cm-super/cm-super-t2a.enc}<C:/Full_TeX/texmf/fonts/type1/public/amsfonts
+/cm/cmex10.pfb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
+/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Full_TeX/texmf/fo
+nts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Full_TeX/texmf/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmr12.pfb
+><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Full_TeX/texmf
+/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Full_TeX/texmf/fonts/type1/public/
+amsfonts/cm/cmr8.pfb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Full_TeX/texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Full_TeX/tex
+mf/fonts/type1/public/cm-super/sfrb1095.pfb><C:/Full_TeX/texmf/fonts/type1/publ
+ic/cm-super/sfrb1200.pfb><C:/Full_TeX/texmf/fonts/type1/public/cm-super/sfrm109
+5.pfb><C:/Full_TeX/texmf/fonts/type1/public/cm-super/sfrm1200.pfb><C:/Full_TeX/
+texmf/fonts/type1/public/cm-super/sfss1200.pfb><C:/Full_TeX/texmf/fonts/type1/p
+ublic/cm-super/sfss1440.pfb><C:/Full_TeX/texmf/fonts/type1/public/cm-super/sfti
+1200.pfb>
+Output written on list01__Geom_sum.pdf (1 page, 245598 bytes).
+PDF statistics:
+ 100 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+

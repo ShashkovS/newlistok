@@ -1,0 +1,8 @@
+*	text=auto
+*.tex	text
+*.sty	text
+*.txt	text
+*.pdf	-text
+*.tex	text working-tree-encoding=WINDOWS-1251 eol=CRLF
+*.sty	text working-tree-encoding=WINDOWS-1251 eol=CRLF
+
