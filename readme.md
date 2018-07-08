@@ -1,7 +1,7 @@
 # Стиль для создания листков (занятий, кружков, собеседований и т.п.) по математике 
 
 # Пример результата:
-![alt text](https://raw.githubusercontent.com/ShashkovS/newlistok/master/list_demo.png)
+![alt text](https://raw.githubusercontent.com/ShashkovS/newlistok/master/list_demo_big.png)
 
 См. также https://github.com/ShashkovS/newlistok/blob/master/list01__Geom_sum.pdf и https://github.com/ShashkovS/newlistok/blob/master/list03__Dir_sol.pdf.
 
