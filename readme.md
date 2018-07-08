@@ -1,12 +1,17 @@
 # Стиль для создания листков (занятий, кружков, собеседований и т.п.) по математике 
 
+# Пример результата:
+![alt text](https://raw.githubusercontent.com/ShashkovS/newlistok/master/list_demo.png)
+
+См. также https://github.com/ShashkovS/newlistok/blob/master/list01__Geom_sum.pdf и https://github.com/ShashkovS/newlistok/blob/master/list03__Dir_sol.pdf.
+
 
 ## История
 
 Пакет создан на основе стиля В.Крюкова (часть синтаксиса), используя некоторые идеи стиля Городенцева (автома-
 тическая генерация кондуитов), а также сокращения стиля DMVN corp. Для русификации используются разработки
 Львовского. Кроме того, документация части стиля, скопированной со стиля DMVN corp., также скопирована с до-
-кументации к стилю DMVN. О DMVN можно узнать на http:\\www.dmvn.mexmat.ru
+кументации к стилю DMVN. О DMVN можно узнать на http://www.dmvn.mexmat.ru
 
 
 ## Зависимости от других пакетов, установка
