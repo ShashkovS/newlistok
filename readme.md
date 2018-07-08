@@ -101,7 +101,8 @@ PDFlatex или PDFTexify. При использовании важно созд
 
 Результат будет примерно такой:
 
-list_demo.png
+![alt text](https://raw.githubusercontent.com/ShashkovS/newlistok/master/list_demo.png)
+
 
 
 Если вам не нравится русский язык в командах, то нет проблем, такой вариант даст эквивалентный результат:
