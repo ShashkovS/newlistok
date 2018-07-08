@@ -504,6 +504,8 @@
 % ===============================================================
 %
 \newtoks\@listname       \@listname       ={}
+\newtoks\@abovelistnum    \@abovelistnum    ={}
+\newtoks\@marksborders   \@marksborders   ={}
 \newtoks\@listsubname    \@listsubname    ={}
 \newtoks\@listnum        \@listnum        ={}
 \newtoks\@listEpigraph   \@listEpigraph   ={}
@@ -526,6 +528,9 @@
 \newcommand{\ExamNumber}[1]{\global\@listnum = {#1}}
 \newcommand{\ListDate}[1]{\global\@listdate = {#1}}
 \newcommand{\ListEpigraph}[2]{\global\@listEpigraph = {#1}\global\@listEpigraphh = {#2}}
+\newcommand{\AboveListNumber}[1]{\global\@abovelistnum = {#1}}
+\newcommand{\MarksBorders}[1]{\global\@marksborders = {#1}}
+
 
 
 %
@@ -535,6 +540,8 @@
 \let\НомерСобеседования=\ExamNumber
 \let\ДатаЛистка=\ListDate
 \let\Эпиграф=\ListEpigraph
+\let\НадНомеромЛистка=\AboveListNumber
+\let\Оценки=\MarksBorders
 
 
 
@@ -545,7 +552,35 @@
 \def\theDate{}
 \def\theFullListok{\sf \theListok\the\@listnum}%
 \def\theFullTitle{\large{\sf \the\@listname}}%
-\def\theFullDate{\sf\theDate\the\@listdate}%
+\def\theMarks{ з. на 5/4/3}
+
+% В зависимости от того, указана ли дополнительная строчка, делаем разный вывод
+\def\theFullListok{%
+\setbox91=\hbox{\the\@abovelistnum}\setbox92=\hbox{\the\@listnum}%
+\ifdim\wd91>.5pt%
+\ifdim\wd92>.5pt% И то, и другое заполнено
+\hbox{\lefteqn{\raise2.3mm\hbox{\sf \the\@abovelistnum}}\lower2.3mm\hbox{\sf \theListok\the\@listnum}}%
+\else% Только то, что над листком
+\sf \the\@abovelistnum%
+\fi%
+\else% Только сам номер листка
+\sf \theListok\the\@listnum%
+\fi}
+
+% В зависимости от того, указана ли дополнительная строчка, делаем разный вывод
+\def\theFullDate{%
+\setbox91=\hbox{\the\@marksborders}\setbox92=\hbox{\the\@listdate}%
+\ifdim\wd91>.5pt%
+\ifdim\wd92>.5pt% И то, и другое заполнено
+\hbox{\lefteqn{\raise2.3mm\hbox{\sf\theDate\the\@listdate}}\lower2.3mm\hbox{\the\@marksborders\theMarks}}%
+\else% Только то, что над листком
+\sf \the\@marksborders\theMarks%
+\fi%
+\else% Только сам номер листка
+\sf \sf\theDate\the\@listdate%
+\fi}
+
+
 
 % Заголовок
 \def\theFullTitleLine{%
@@ -588,7 +623,7 @@
 
 \newcommand{\CreateTitle}{%
 %дальше --- не трогайте
-\@AddExpand{<listok number = '\the\@listnum' description='\the\@listname' type='1' date='\the\@listdate'>\par}{\@xmlTableW}%
+\@AddExpand{<listok number = '\the\@listnum' description='\the\@listname' type='1' date='\the\@listdate' marks='\the\@marksborders'>\par}{\@xmlTableW}%
 %\@AddExpand{<listok number = '\the\@listnum' description='занятие' type='1' date='\the\@listdate'>\par}{\@xmlTableW}%
 %\@AddExpand{\ \ <problem group='0' type='0'>Н</problem>\par}{\@xmlTableW}%
 \ResetNumbers%
@@ -1794,6 +1829,7 @@
 \newcommand{\lsd}[1]{\ul{\mathrm{S}}_{{#1}}}                             % lower Darboux sum
 \newcommand{\pf}[2]{\frac{\pd #1}{\pd #2}}                             % partial derivative fraction
 \newcommand{\dv}{\smash{\mskip3mu\lower1truept\hbox{\vdots}\mskip3mu}}      % multiple of (rus)
+\newcommand{\del}{\smash{\mskip3mu\lower1truept\hbox{\vdots}\mskip3mu}}      % multiple of (rus)
 \newcommand{\lfrac}[2]{#1/#2}
 %-----end----------end----------end----------end----------end----
 
