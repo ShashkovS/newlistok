@@ -159,4 +159,4 @@ PDFlatex или PDFTexify. При использовании важно созд
 
 # Документация
 
-Более подробную документацию см. в newlistok.pdf.
+Более подробную документацию см. в https://github.com/ShashkovS/newlistok/blob/master/newlistok.pdf.
