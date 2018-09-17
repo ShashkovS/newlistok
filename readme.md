@@ -31,6 +31,38 @@ babel-russian babel-english geometry cyrillic cmcyr lh lhcyr cm-super collection
 ifthenx fancybox colortbl standalone
 ```
 
+Под Fedora пакетный менеджер tlmgr не ставится, нужно напрямую ставить через dnf:
+```bash
+sudo dnf -y install texlive-install
+sudo dnf -y install texlive-amsfonts
+sudo dnf -y install texlive-amsmath
+sudo dnf -y install texlive-epsf
+sudo dnf -y install texlive-xcolor
+sudo dnf -y install texlive-microtype
+sudo dnf -y install texlive-framed
+sudo dnf -y install texlive-bbding
+sudo dnf -y install texlive-marginnote
+sudo dnf -y install texlive-ifthenx
+sudo dnf -y install texlive-pgf
+sudo dnf -y install texlive-pst-graphicx
+sudo dnf -y install texlive-babel-russian
+sudo dnf -y install texlive-babel-english
+sudo dnf -y install texlive-geometry
+sudo dnf -y install texlive-cyrillic
+sudo dnf -y install texlive-cmcyr
+sudo dnf -y install texlive-lh
+sudo dnf -y install texlive-lhcyr
+sudo dnf -y install texlive-cm-super
+sudo dnf -y install texlive-collection-langcyrillic
+sudo dnf -y install texlive-graphics
+sudo dnf -y install texlive-ifthenx
+sudo dnf -y install texlive-fancybox
+sudo dnf -y install texlive-colortbl
+sudo dnf -y install texlive-standalone
+```
+
+
+
 Под Windows пакеты можно установить при помощи менеджера mpm, который «живёт» по «адресу»
 `.../texmf/miktex/bin/mpm.exe`.
 
