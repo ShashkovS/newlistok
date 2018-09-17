@@ -18,7 +18,7 @@
 
 Пакет используют несколько стандартных пакетов: `amsfonts, amssymb, amsmath, epsf, graphicx, xcolor, microtype,
 keyval, framed, inputenc, ifthen, bbding, marginnote, textcomp,ifthenx, pgf, pst-graphicx, babel-russian,
-babel-english, geometry, cyrillic, cmcyr, lh, lhcyr, cm-super, collection-langcyrillic`. Все они входят в пол-
+babel-english, geometry, cyrillic, cmcyr, lh, lhcyr, cm-super, collection-langcyrillic, fancybox colortbl standalone`. Все они входят в пол-
 ный комплект TeX (например, в пакет MiKTeX, который можно скачать из архивов CTAN, а также в TeXLive). Часть
 из них входит в минимальный пакет MikTeX’а для Windows и basic-пакет для TeXLive.
 
@@ -28,7 +28,7 @@ babel-english, geometry, cyrillic, cmcyr, lh, lhcyr, cm-super, collection-langcy
 ```bash
 tlmgr install amsfonts amsmath epsf xcolor microtype framed bbding marginnote ifthenx pgf pst-graphicx
 babel-russian babel-english geometry cyrillic cmcyr lh lhcyr cm-super collection-langcyrillic graphics
-ifthenx
+ifthenx fancybox colortbl standalone
 ```
 
 Под Windows пакеты можно установить при помощи менеджера mpm, который «живёт» по «адресу»
