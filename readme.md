@@ -18,52 +18,26 @@
 
 Пакет используют несколько стандартных пакетов: `amsfonts, amssymb, amsmath, epsf, graphicx, xcolor, microtype,
 keyval, framed, inputenc, ifthen, bbding, marginnote, textcomp,ifthenx, pgf, pst-graphicx, babel-russian,
-babel-english, geometry, cyrillic, cmcyr, lh, lhcyr, cm-super, collection-langcyrillic, fancybox colortbl standalone`. Все они входят в пол-
-ный комплект TeX (например, в пакет MiKTeX, который можно скачать из архивов CTAN, а также в TeXLive). Часть
+babel-english, geometry, cyrillic, cmcyr, lh, lhcyr, cm-super, collection-langcyrillic, fancybox, colortbl, standalone`. Все они входят в полный комплект TeX (например, в пакет MiKTeX, который можно скачать из архивов CTAN, а также в TeXLive). Часть
 из них входит в минимальный пакет MikTeX’а для Windows и basic-пакет для TeXLive.
 
 При использовании под Linux или Mac необходимо установить базовый `texlive-scheme-basic` и перечисленные
 выше пакеты. Установить пакеты можно, например, командой
 
 ```bash
-tlmgr install amsfonts amsmath epsf xcolor microtype framed bbding marginnote ifthenx pgf pst-graphicx
+sudo tlmgr install amsfonts amsmath epsf xcolor microtype framed bbding marginnote ifthenx pgf pst-graphicx
 babel-russian babel-english geometry cyrillic cmcyr lh lhcyr cm-super collection-langcyrillic graphics
 ifthenx fancybox colortbl standalone
 ```
 
 Под Fedora пакетный менеджер tlmgr не ставится, нужно напрямую ставить через dnf:
 ```bash
-sudo dnf -y install texlive-install
-sudo dnf -y install texlive-amsfonts
-sudo dnf -y install texlive-amsmath
-sudo dnf -y install texlive-epsf
-sudo dnf -y install texlive-xcolor
-sudo dnf -y install texlive-microtype
-sudo dnf -y install texlive-framed
-sudo dnf -y install texlive-bbding
-sudo dnf -y install texlive-marginnote
-sudo dnf -y install texlive-ifthenx
-sudo dnf -y install texlive-pgf
-sudo dnf -y install texlive-pst-graphicx
-sudo dnf -y install texlive-babel-russian
-sudo dnf -y install texlive-babel-english
-sudo dnf -y install texlive-geometry
-sudo dnf -y install texlive-cyrillic
-sudo dnf -y install texlive-cmcyr
-sudo dnf -y install texlive-lh
-sudo dnf -y install texlive-lhcyr
-sudo dnf -y install texlive-cm-super
-sudo dnf -y install texlive-collection-langcyrillic
-sudo dnf -y install texlive-graphics
-sudo dnf -y install texlive-ifthenx
-sudo dnf -y install texlive-fancybox
-sudo dnf -y install texlive-colortbl
-sudo dnf -y install texlive-standalone
+sudo dnf -y install texlive-install texlive-amsfonts texlive-amsmath texlive-epsf texlive-xcolor texlive-microtype texlive-framed texlive-bbding texlive-marginnote texlive-ifthenx texlive-pgf texlive-pst-graphicx texlive-babel-russian texlive-babel-english texlive-geometry texlive-cyrillic texlive-cmcyr texlive-lh texlive-lhcyr texlive-cm-super texlive-collection-langcyrillic texlive-graphics texlive-ifthenx texlive-fancybox texlive-colortbl texlive-standalone 
 ```
 
 
 
-Под Windows пакеты можно установить при помощи менеджера mpm, который «живёт» по «адресу»
+Под Windows можно использовать также TeXLive, либо MikTeX. В этом случае пакеты можно установить при помощи менеджера mpm, который «живёт» по «адресу»
 `.../texmf/miktex/bin/mpm.exe`.
 
 Подключать пакет babel при использовании newlistok.sty не нужно. Компилировать файлы надо командой
@@ -74,7 +48,8 @@ PDFlatex или PDFTexify. При использовании важно созд
 ```
 % !TeX encoding = windows-1251
 ```
-
+## В чём писать
+Для подготовки листков крайне рекомендуется использовать среду https://texstudio.org.
 
 ## Подключение и опции
 
@@ -85,6 +60,7 @@ PDFlatex или PDFTexify. При использовании важно созд
 ```tex
 \usepackage{newlistok}
 ```
+
 
 
 
