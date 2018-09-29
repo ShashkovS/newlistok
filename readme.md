@@ -22,12 +22,11 @@ babel-english, geometry, cyrillic, cmcyr, lh, lhcyr, cm-super, collection-langcy
 из них входит в минимальный пакет MikTeX’а для Windows и basic-пакет для TeXLive.
 
 При использовании под Linux или Mac необходимо установить базовый `texlive-scheme-basic` и перечисленные
-выше пакеты. Установить пакеты можно, например, командой
+выше пакеты. Чтобы установить `texlive` на MacOs нужно скачать файл http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz, распаковать и выполнить `sudo ./install-tl`. Выбрать по S схему basic, по O->L добавить symlink'и, и запустить установку I.
+Установить пакеты после этого можно командой
 
 ```bash
-sudo tlmgr install amsfonts amsmath epsf xcolor microtype framed bbding marginnote ifthenx pgf pst-graphicx
-babel-russian babel-english geometry cyrillic cmcyr lh lhcyr cm-super collection-langcyrillic graphics
-ifthenx fancybox colortbl standalone
+sudo tlmgr install amsfonts amsmath epsf xcolor microtype framed bbding marginnote ifthenx pgf pst-graphicx babel-russian babel-english geometry cyrillic cmcyr lh lhcyr cm-super collection-langcyrillic graphics ifthenx fancybox colortbl standalone
 ```
 
 Под Fedora пакетный менеджер tlmgr не ставится, нужно напрямую ставить через dnf:
