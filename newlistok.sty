@@ -2,9 +2,9 @@
 % ===============================================================
 % TeX style for lists of problems for students and lectures.
 % ===============================================================
-\ProvidesPackage{newlistok}[2017/08/21 v7.07 Shashkov's list style package]
+\ProvidesPackage{newlistok}[2019/02/05 v8.01 Shashkov's list style package]
 \typeout{|----------------------------------------------------------------------|}
-\typeout{|New package for lists in math school. Version: 7.07; Date: 2017/08/21.|}
+\typeout{|New package for lists in math school. Version: 8.01; Date: 2019/02/05.|}
 \typeout{|All questions to Sergey Shashkov, sh57@yandex.ru. Thank you! Be happy!|}
 \typeout{|----------------------------------------------------------------------|}
 
@@ -224,7 +224,6 @@
 \newlength{\@oldls}\setlength{\@oldls}{\lineskip}
 \newlength{\@oldlsl}\setlength{\@oldlsl}{\lineskiplimit}
 %
-\let\СохранитьРазмеры=\SaveMargins
 %-----end----------end----------end----------end----------end----
 
 
@@ -236,8 +235,6 @@
 \newcommand{\BreakFormulas}{\global\relpenalty=500\global\binoppenalty=700}
 \newcommand{\DoNotBreakFormulas}{\global\relpenalty=10000\global\binoppenalty=10000}
 %
-\let\РазрыватьФормулы=\BreakFormulas
-\let\НеРазрыватьФормулы=\DoNotBreakFormulas
 %-----end----------end----------end----------end----------end----
 
 
@@ -271,9 +268,6 @@
 \def\@xpage[#1]{\newpage\ifnum\count0=2\IncreaseHeight{#1}\fi}
 \def\@ypage{\newpage\ifnum\count0=2\IncreaseHeight{-7truemm}\fi}
 %
-\let\раздел=\Sect
-\let\допраздел=\AdditSect
-\let\страница=\ChangePageSize
 %-----end----------end----------end----------end----------end----
 
 
@@ -286,10 +280,6 @@
 \def\markI#1 {\textit{#1}\/\xspace}
 \def\markB#1 {\textbf{#1}\xspace}
 %
-\let\выд=\mark
-\let\выдк=\markI
-\let\выдд=\markB
-\let\выдж=\markB
 \newcommand{\help}[1]{({\small Подсказка: }{\reflectbox{\hbox{\footnotesize{#1}}}})}
 %-----end----------end----------end----------end----------end----
 
@@ -325,10 +315,6 @@
 \newcommand{\SetIndents}[2]{\par\global\leftskip=#1\global\rightskip=#2}
 \newcommand{\DefaultIndents}{\SetIndents{0truept}{0truept}}
 %
-\let\УвеличитьВысоту=\IncreaseHeight
-\let\УвеличитьШирину=\IncreaseWidth
-\let\УстановитьГраницы=\SetIndents
-\let\ВосстановитьГраницы=\DefaultIndents
 
 %-----end----------end----------end----------end----------end----
 
@@ -369,10 +355,6 @@
 \normalsize
 }
 %
-\let\УвеличитьПробелы=\IncreaseItemSpaces
-\let\ВосстановитьПробелы=\DefaultItemSpaces
-\let\УвеличитьПромежутки=\IncreaseLineSkip
-\let\ВосстановитьПромежутки=\DefaultLineSkip
 %-----end----------end----------end----------end----------end----
 
 
@@ -474,10 +456,6 @@
     %\global\@cell={\arabic{@studentnum}\stepcounter{@studentnum}.\phantom{\vrule height\@cellHeight}& \ }
     \global\@complexity={}}
 %
-\let\ОбнулитьКондуит=\ResetLogbook
-\let\ОбнулитьДанные=\ResetNumbers
-\let\ЗанулитьРазмеры=\ZeroMargins
-\let\ОбнулитьРазмеры=\DefaultMargins
 %-----end----------end----------end----------end----------end----
 
 
@@ -535,14 +513,6 @@
 
 
 %
-\let\Заголовок=\ListTitle
-\let\Подзаголовок=\ListSubtitle
-\let\НомерЛистка=\ListNumber
-\let\НомерСобеседования=\ExamNumber
-\let\ДатаЛистка=\ListDate
-\let\Эпиграф=\ListEpigraph
-\let\НадНомеромЛистка=\AboveListNumber
-\let\Оценки=\MarksBorders
 
 
 
@@ -639,7 +609,6 @@
 \@listEpigraph={}\@listEpigraphh={}%
 \nopagebreak%
 }
-\let\СоздатьЗаголовок=\CreateTitle
 
 
 \newcommand{\ShowPageHeader}{%
@@ -649,8 +618,6 @@
 \ifnum\count0>1%
 \raisebox{-13truemm}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil \hfil \hbox to 0pt{\hss\llap Страница \thepage}}}\fi}%
 }
-\let\ВключитьКолонитул=\ShowPageHeader
-\let\ВключитьКолонтитул=\ShowPageHeader
 \newcommand{\LecturePageHeader}{%
 \renewcommand{\@oddhead}{%
 \ifnum\count0=1\global\addtolength{\textheight}{-10truemm}\fi%
@@ -660,7 +627,6 @@
 \vbox{\hbox to \textwidth{\strut\hbox to 0pt{\sf\large\the\lecttitle} \hfil \hfil \hbox to 0pt{\hss\llap Страница \thepage}}%
 \hrule}}\fi}%
 }
-\let\КолонитулЛекции=\LecturePageHeader
 %-----end----------end----------end----------end----------end----
 
 
@@ -699,15 +665,6 @@
 \newcommand{\iproblemn}[1]{\setcounter{problemnum}{#1}\addtocounter{problemnum}{-1}\iproblem}
 \newcommand{\iiproblemn}[1]{\setcounter{problemnum}{#1}\addtocounter{problemnum}{-1}\iiproblem}
 \newcommand{\wproblemn}[1]{\setcounter{problemnum}{#1}\addtocounter{problemnum}{-1}\wproblem}
-\let\ссзадачан=\hhproblemn
-\let\сзадачан=\hproblemn
-\let\задачан=\problemn
-\let\взадачан=\iproblemn
-\let\ввзадачан=\iiproblemn
-\let\пввзадачан=\wiiproblemn
-\let\впвзадачан=\wiiproblemn
-\let\ввпзадачан=\wiiproblemn
-\let\пзадачан=\wproblemn
 
 
 %здесь определяется то, как будет выглядеть задача
@@ -779,24 +736,8 @@
 }
 \let\endзадача=\eproblem
 \let\endпзадача=\eproblem
-\let\кзадача=\eproblem
 \let\eprb=\eproblem
-\let\кздч=\eproblem
 
-\let\ссздч=\hhproblem
-\let\сздч=\hproblem
-\let\здч=\problem
-\let\вздч=\iproblem
-\let\ввздч=\iiproblem
-\let\ссзадача=\hhproblem
-\let\сзадача=\hproblem
-\let\задача=\problem
-\let\взадача=\iproblem
-\let\ввзадача=\iiproblem
-\let\пввзадача=\wiiproblem
-\let\впвзадача=\wiiproblem
-\let\ввпзадача=\wiiproblem
-\let\пзадача=\wproblem
 \let\hhprb=\hhproblem
 \let\hprb=\hproblem
 \let\wprb=\wproblem
@@ -822,13 +763,6 @@
 \let\endwprb=\eproblem
 \let\endiprb=\eproblem
 \let\endiiprb=\eproblem
-\def\сспункт{\hhitm}
-\def\спункт{\hitm}
-\def\пункт{\itm}
-\def\впункт{\iitm}
-\def\ппункт{\witm}
-\def\ввпункт{\iiitm}
-\def\ппункт{\witm}
 %-----end----------end----------end----------end----------end----
 
 
@@ -848,12 +782,6 @@
 \newcommand{\hitmn}[1]{\setcounter{itemnum}{#1}\addtocounter{itemnum}{-1}\hitm}
 \newcommand{\hhitmn}[1]{\setcounter{itemnum}{#1}\addtocounter{itemnum}{-1}\hhitm}
 \newcommand{\witmn}[1]{\setcounter{itemnum}{#1}\addtocounter{itemnum}{-1}\witm}
-\let\пунктн=\itmn
-\let\впунктн=\iitmn
-\let\ввпунктн=\iiitmn
-\let\ппунктн=\witmn
-\let\спунктн=\hitmn
-\let\сспунктн=\hhitmn
 
 
 \newlength{\@strutdepth}
@@ -910,8 +838,6 @@
 \def\SpaceBeforeInlineItem{\noindent\hskip\@SpaceBeforeItem\relax}
 \def\SpaceBeforeNewlineItem{\par\noindent\hangindent=\parindent\hangafter=1}
 \def\theFullItem{\hbox to\@starspace{{\bf{\ralph{itemnum})\the\@star}}\hfill}}
-\let\ПробелПередПунктомВСтрочку=\SpaceBeforeInlineItem
-\let\ПробелПередПунктомНеВСтрочку=\SpaceBeforeNewlineItem
 
 
 \newcommand{\ppunct}{\@ifnextchar[{\@xxitem}{\@yyitem}}
@@ -925,8 +851,6 @@
 
 \newcommand{\itmInline}{\global\@nevstrochkufalse}
 \newcommand{\itmNewline}{\global\@nevstrochkutrue}
-\let\невСтрочку=\itmNewline
-\let\вСтрочку=\itmInline
 \newcommand{\wrapLine}{\hfil\break}
 
 
@@ -978,6 +902,9 @@
 \setlength{\@LogbookWidth}{21truecm}
 }
 \def\start#1{\the\@cell\vbox to .8\@cellHeight{\vss\hbox{\strut#1}\vss}\the\@TableFiller \\ \hline}
+\def\setcondList#1{\condList={#1}}
+\def\setcondMark#1{\condMark={#1}}
+
 \def\midlegend{
         \hline\hline
         \ifnopunkts
@@ -997,9 +924,9 @@
   \vfill
   \vspace{20truemm minus 17truemm}
   \fontsize{13}{15}\selectfont
-  \setbox91=\hbox{\the\пометка}                                                    %по
+  \setbox91=\hbox{\the\condMark}                                                    %по
   \ifdim\wd91>.5pt                                                                 %мет
-    \hbox to \@LogbookWidth{\hss{\bf\fontsize{15}{15}\selectfont\the\пометка}\hspace{1.5truecm}}      %ка
+    \hbox to \@LogbookWidth{\hss{\bf\fontsize{15}{15}\selectfont\the\condMark}\hspace{1.5truecm}}      %ка
     \bigskip                                                                       %
   \fi
   \def\theFullTitle{\fontsize{15}{15}\selectfont\sf \the\@listname}%
@@ -1021,7 +948,7 @@
       \fi
       \hline
       \hline
-      \the\список%
+      \the\condList%
       \ifdownlegend%
         \hline
         \ifnopunkts
@@ -1049,7 +976,7 @@
 {%
 \ifproblemfinished\else\errmessage{Предыдущая задача не закончена!}\fi%
 \ifmakeconduits%
-  \СохранитьРазмеры%
+  \SaveMargins%
   \begingroup%
   \setcounter{@studentnum}{1}%
   \input{\the\@filename}%
@@ -1058,7 +985,7 @@
   \sbox{\@rosebox}{\textcolor{classicrose}{\rule{\@cellWidth}{\@cellHeight}}}%
   \sbox{\@LogbookBox}{\conduitMainPart}%
   \newpage%
-  \ЗанулитьРазмеры%
+  \ZeroMargins%
   \thispagestyle{empty}%
   \iflandscape%
     \rotatebox{90}{\usebox{\@LogbookBox}}%
@@ -1067,19 +994,17 @@
   \fi%
   \newpage%
   \endgroup%
-  \ОбнулитьРазмеры%
+  \DefaultMargins%
 \fi%
 }
-\let\СделатьКондуит=\CreateConduit
 
 
 \newcommand{\CreateConduitFrom}[3]
 {%
 \@filename = {#3}%
-\СделатьКондуит{#1}{#2}%
+\CreateConduit{#1}{#2}%
 \@filename={spisok.tex}
 }
-\let\СделатьКондуитИз=\CreateConduitFrom
 
 
 \newcommand{\PersonalConduitF}[3]%
@@ -1161,12 +1086,8 @@
 \vspace*{-2mm}
 \endgroup
 }
-\newcommand{\SeparateConduit}{\sbox{\@conduitsave}{\vbox{\ЛичныйКондуит{0mm}{6.5mm}}}\ОбнулитьКондуит}
-\newcommand{\InsertSeparatedConduit}{\noindent\usebox{\@conduitsave}\vspace{-3mm}\ЛичныйКондуит{0mm}{6.5mm}}
-\let\ЛичныйКондуит=\PersonalConduit
-\let\ЛичныйКондуитФ=\PersonalConduitF
-\let\РазделитьКондуит=\SeparateConduit
-\let\ВставитьКондуит=\InsertSeparatedConduit
+\newcommand{\SeparateConduit}{\sbox{\@conduitsave}{\vbox{\PersonalConduit{0mm}{6.5mm}}}\ResetLogbook}
+\newcommand{\InsertSeparatedConduit}{\noindent\usebox{\@conduitsave}\vspace{-3mm}\PersonalConduit{0mm}{6.5mm}}
 
 
 
@@ -1192,9 +1113,6 @@
 \vspace*{.6truecm}\centerline{\large \scshape\the\lectauthor}\vskip 1truecm plus 1truecm minus .6truecm}
 %\newbox{\comentbox}
 \newcommand{\@evrskip}{\par\spacer\noindent}
-\let\НазваниеЛекции=\LectureTitle
-\let\АвторЛекции=\LectureAuthor
-\let\СоздатьЗаголовокЛекции=\CreateLectureTitle
 
 
 % мега определятор новых штук. Супер настраевымый
@@ -1249,38 +1167,6 @@
 \newdfn{solution}{Решение.}{\bf}{\it}{\rm}{$\blacksquare$}
 \newdfn{suggestion}{Указание.}{\bf}{\it}{\rm}{}
 \newdfn{answer}{Ответ:}{\bf}{\it}{\rm}
-
-\synDfn{акс}{axiom}
-\synDfn{теор}{theorem}
-\synDfn{лем}{lemma}
-\synDfn{пред}{proposition}
-\synDfn{прим}{example}
-\synDfn{упр}{exercise}
-\synDfn{зам}{remark}
-\synDfn{утв}{assertion}
-\synDfn{след}{corollary}
-\synDfn{согл}{agreement}
-\synDfn{док}{proof}
-\synDfn{реш}{solution}
-\synDfn{указ}{suggestion}
-\synDfn{отв}{answer}
-
-\synDfn{аксиома}{axiom}
-\synDfn{теорема}{theorem}
-\synDfn{лемма}{lemma}
-\synDfn{предложение}{proposition}
-\synDfn{определение}{definition}
-\synDfn{пример}{example}
-\synDfn{упражнение}{exercise}
-\synDfn{замечание}{remark}
-\synDfn{утверждение}{assertion}
-\synDfn{факт}{fact}
-\synDfn{следствие}{corollary}
-\synDfn{соглашение}{agreement}
-\synDfn{доказательство}{proof}
-\synDfn{решение}{solution}
-\synDfn{указание}{suggestion}
-\synDfn{ответ}{answer}
 
 \synDfn{axm}{axiom}
 \synDfn{thm}{theorem}
@@ -2252,7 +2138,7 @@
 
 
 \if@exam
-\ГраницыКондуитаПортрет
+\CondPortrait
 \@listname={Занятие \the\@listnum}
 \def\theProblem{Задача\hspace{1.1truemm}\the\@listnum.}
 \def\theListok{}
@@ -2264,7 +2150,7 @@
 % Если ВМШ:
 % ===============================================================
 \if@vmsh
-\ГраницыКондуитаПортрет
+\CondPortrait
 \@listname={Занятие \the\@listnum}
 \def\theProblem{Задача\hspace{1.1truemm}\the\@listnum.}
 \def\theListok{Занятие \No\/}
@@ -2298,8 +2184,8 @@
 %\def\theFullProblem{{\bf{\theProblem\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
 \def\theFullItem{\hbox to\@starspace{{{\ralph{itemnum})\the\@star}}\hfill}}
 \def\theFullProblem{{{\theProblem\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
-%\РазрыватьФормулы
-\renewcommand{\раздел}[1]{\spacer\spacer\centerline{#1}\spacer}
+%\BreakFormulas
+\renewcommand{\Sect}[1]{\spacer\spacer\centerline{#1}\spacer}
 \makeatletter
 \renewcommand{\@oddhead}{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap Страница \thepage}}}\fi}
 \makeatother
@@ -2670,8 +2556,8 @@
 \def\contentsname{Оглавление}
 \def\figurename{Рис.}
 \def\partname{Часть}
-\def\listfigurename{Список рисунков}
-\def\listtablename{Список таблиц}
+\def\listfigurename{condList рисунков}
+\def\listtablename{condList таблиц}
 \def\refname{Литература}
 \def\bibname{Литература}
 \def\indexname{Предметный указатель}
@@ -3032,9 +2918,7 @@
                  января\or февраля\or марта\or апреля\or мая\or
                  июня\or июля\or августа\or сентября\or октября\or
                  ноября\or декабря\fi\space\number\year}
-\let\сегодня=\today
 \def\mmyy{\number\month.\number\year}
-\let\ммгг=\mmyy
 
 \frenchspacing
 \righthyphenmin 2
@@ -3071,6 +2955,100 @@
 
 
 
+
+
+
+
+
+
+
+\let\СохранитьРазмеры=\SaveMargins
+\let\РазрыватьФормулы=\BreakFormulas
+\let\НеРазрыватьФормулы=\DoNotBreakFormulas
+\let\раздел=\Sect
+\let\допраздел=\AdditSect
+\let\страница=\ChangePageSize
+\let\выд=\mark
+\let\выдк=\markI
+\let\выдд=\markB
+\let\выдж=\markB
+\let\УвеличитьВысоту=\IncreaseHeight
+\let\УвеличитьШирину=\IncreaseWidth
+\let\УстановитьГраницы=\SetIndents
+\let\ВосстановитьГраницы=\DefaultIndents
+\let\УвеличитьПробелы=\IncreaseItemSpaces
+\let\ВосстановитьПробелы=\DefaultItemSpaces
+\let\УвеличитьПромежутки=\IncreaseLineSkip
+\let\ВосстановитьПромежутки=\DefaultLineSkip
+\let\ОбнулитьКондуит=\ResetLogbook
+\let\ОбнулитьДанные=\ResetNumbers
+\let\ЗанулитьРазмеры=\ZeroMargins
+\let\ОбнулитьРазмеры=\DefaultMargins
+\let\Заголовок=\ListTitle
+\let\Подзаголовок=\ListSubtitle
+\let\НомерЛистка=\ListNumber
+\let\НомерСобеседования=\ExamNumber
+\let\ДатаЛистка=\ListDate
+\let\Эпиграф=\ListEpigraph
+\let\НадНомеромЛистка=\AboveListNumber
+\let\Оценки=\MarksBorders
+\let\СоздатьЗаголовок=\CreateTitle
+\let\ВключитьКолонитул=\ShowPageHeader
+\let\ВключитьКолонтитул=\ShowPageHeader
+\let\КолонитулЛекции=\LecturePageHeader
+\let\ссзадачан=\hhproblemn
+\let\сзадачан=\hproblemn
+\let\задачан=\problemn
+\let\взадачан=\iproblemn
+\let\ввзадачан=\iiproblemn
+\let\пввзадачан=\wiiproblemn
+\let\впвзадачан=\wiiproblemn
+\let\ввпзадачан=\wiiproblemn
+\let\пзадачан=\wproblemn
+\let\кзадача=\eproblem
+\let\кздч=\eproblem
+\let\ссздч=\hhproblem
+\let\сздч=\hproblem
+\let\здч=\problem
+\let\вздч=\iproblem
+\let\ввздч=\iiproblem
+\let\ссзадача=\hhproblem
+\let\сзадача=\hproblem
+\let\задача=\problem
+\let\взадача=\iproblem
+\let\ввзадача=\iiproblem
+\let\пввзадача=\wiiproblem
+\let\впвзадача=\wiiproblem
+\let\ввпзадача=\wiiproblem
+\let\пзадача=\wproblem
+\def\сспункт{\hhitm}
+\def\спункт{\hitm}
+\def\пункт{\itm}
+\def\впункт{\iitm}
+\def\ппункт{\witm}
+\def\ввпункт{\iiitm}
+\def\ппункт{\witm}
+\let\пунктн=\itmn
+\let\впунктн=\iitmn
+\let\ввпунктн=\iiitmn
+\let\ппунктн=\witmn
+\let\спунктн=\hitmn
+\let\сспунктн=\hhitmn
+\let\ПробелПередПунктомВСтрочку=\SpaceBeforeInlineItem
+\let\ПробелПередПунктомНеВСтрочку=\SpaceBeforeNewlineItem
+\let\невСтрочку=\itmNewline
+\let\вСтрочку=\itmInline
+\let\СделатьКондуит=\CreateConduit
+\let\СделатьКондуитИз=\CreateConduitFrom
+\let\ЛичныйКондуит=\PersonalConduit
+\let\ЛичныйКондуитФ=\PersonalConduitF
+\let\РазделитьКондуит=\SeparateConduit
+\let\ВставитьКондуит=\InsertSeparatedConduit
+\let\НазваниеЛекции=\LectureTitle
+\let\АвторЛекции=\LectureAuthor
+\let\СоздатьЗаголовокЛекции=\CreateLectureTitle
+\let\сегодня=\today
+\let\ммгг=\mmyy
 \let\список=\condList
 \let\пометка=\condMark
 \let\сНовойСтроки=\itmNewline
@@ -3102,14 +3080,40 @@
 \let\ч=\Cdash
 \let\т=\mdash
 \let\Т=\Mdash
+\let\пометка=\setcondMark
+\let\список=\setcondList
 
+\synDfn{акс}{axiom}
+\synDfn{теор}{theorem}
+\synDfn{лем}{lemma}
+\synDfn{пред}{proposition}
+\synDfn{прим}{example}
+\synDfn{упр}{exercise}
+\synDfn{зам}{remark}
+\synDfn{утв}{assertion}
+\synDfn{след}{corollary}
+\synDfn{согл}{agreement}
+\synDfn{док}{proof}
+\synDfn{реш}{solution}
+\synDfn{указ}{suggestion}
+\synDfn{отв}{answer}
 
-
-
-
-
-
-
+\synDfn{аксиома}{axiom}
+\synDfn{теорема}{theorem}
+\synDfn{лемма}{lemma}
+\synDfn{предложение}{proposition}
+\synDfn{определение}{definition}
+\synDfn{пример}{example}
+\synDfn{упражнение}{exercise}
+\synDfn{замечание}{remark}
+\synDfn{утверждение}{assertion}
+\synDfn{факт}{fact}
+\synDfn{следствие}{corollary}
+\synDfn{соглашение}{agreement}
+\synDfn{доказательство}{proof}
+\synDfn{решение}{solution}
+\synDfn{указание}{suggestion}
+\synDfn{ответ}{answer}
 
 
 
