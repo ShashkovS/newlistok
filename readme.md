@@ -34,10 +34,14 @@ sudo tlmgr install amsfonts amsmath epsf xcolor microtype framed bbding marginno
 sudo dnf -y install texlive-install texlive-amsfonts texlive-amsmath texlive-epsf texlive-xcolor texlive-microtype texlive-framed texlive-bbding texlive-marginnote texlive-ifthenx texlive-pgf texlive-pst-graphicx texlive-babel-russian texlive-babel-english texlive-geometry texlive-cyrillic texlive-cmcyr texlive-lh texlive-lhcyr texlive-cm-super texlive-collection-langcyrillic texlive-graphics texlive-ifthenx texlive-fancybox texlive-colortbl texlive-standalone 
 ```
 
+Впрочем и под Linux'ом, и особенно под Mac удобнее установить MikTeX со страницы https://miktex.org/download.
 
-
-Под Windows можно использовать также TeXLive, либо MikTeX. В этом случае пакеты можно установить при помощи менеджера mpm, который «живёт» по «адресу»
+Под Windows можно использовать также TeXLive, либо (лучше) MikTeX. В этом случае пакеты можно установить при помощи менеджера mpm, который «живёт» по «адресу»
 `.../texmf/miktex/bin/mpm.exe`.
+
+```bash
+mpm --require="amsfonts amsmath epsf graphics xcolor microtype xkeyval framed ifthenx bbding marginnote pgf pst-graphicx babel-russian babel-english geometry cyrillic cmcyr lh lhcyr cm-super fancybox colortbl standalone"
+```
 
 Подключать пакет babel при использовании newlistok.sty не нужно. Компилировать файлы надо командой
 PDFlatex или PDFTexify. При использовании важно создавать ваши файлы в кодировке WINDOWS-1251. Для то-
