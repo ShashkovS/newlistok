@@ -29,6 +29,7 @@
 
 \RequirePackage[noadjust]{marginnote}
 \RequirePackage{textcomp}
+\RequirePackage{fancybox}
 \DeclareGraphicsExtensions{.pdf,.PDF,.png,.PNG,.jpg,.mps,.jpeg,.jbig2,.jb2,.JPG,.JPEG,.JBIG2,.JB2}
 
 
@@ -62,7 +63,7 @@
 % ===============================================================
 % ===============================================================
 % ===============================================================
-% russlh    Начало: нужен для включения русского языка
+% russlh    РќР°С‡Р°Р»Рѕ: РЅСѓР¶РµРЅ РґР»СЏ РІРєР»СЋС‡РµРЅРёСЏ СЂСѓСЃСЃРєРѕРіРѕ СЏР·С‹РєР°
 % ===============================================================
 \language\l@russian
 \lefthyphenmin=2
@@ -75,12 +76,12 @@
 \def\reserved@a#1#2{\@tempcnta#1\relax\@tempcntb#2\relax\reserved@b}
 \def\reserved@b{\ifnum\@tempcnta>\@tempcntb\else\reserved@c\@tempcnta\advance\@tempcnta\@ne\expandafter\reserved@b\fi}
 \def\reserved@c#1{\catcode#1=11\relax}
-\reserved@a{192}{223} % А-Я
-\reserved@a{224}{255} % а-я
-%\catcode156=11 % Ё
-%\catcode188=11 % ё
-%\catcode168=11 % Ё
-%\catcode184=11 % ё
+\reserved@a{192}{223} % Рђ-РЇ
+\reserved@a{224}{255} % Р°-СЏ
+%\catcode156=11 % РЃ
+%\catcode188=11 % С‘
+%\catcode168=11 % РЃ
+%\catcode184=11 % С‘
 \DeclareInputText{156}{\CYRYO}
 \DeclareInputText{168}{\CYRYO}
 \DeclareInputText{188}{\cyryo}
@@ -96,7 +97,7 @@
 
 
 % ===============================================================
-% russlh        Конец
+% russlh        РљРѕРЅРµС†
 % ===============================================================
 % ===============================================================
 % ===============================================================
@@ -132,6 +133,7 @@
 \newif\if@geometry\@geometryfalse
 \newif\if@book\@bookfalse
 \newif\if@tikz\@tikzfalse
+\newif\if@eng\@engfalse
 \define@key{newlistokkey}{mag}{\mag#1}
 \define@key{newlistokkey}{algebra}[true]{\@algebratrue}
 \define@key{newlistokkey}{exam}[true]{\@examtrue}
@@ -140,12 +142,14 @@
 \define@key{newlistokkey}{geometry}[true]{\@geometrytrue}
 \define@key{newlistokkey}{book}[true]{\@booktrue}%
 \define@key{newlistokkey}{tikz}[true]{\@tikztrue}%
+\define@key{newlistokkey}{eng}[true]{\@engtrue}%
 \let\@tempa\@empty%
 \edef\@tempa{\@ptionlist{\@currname.\@currext}}%
 \@for\CurrentOption:=\@classoptionslist\do{%
   \@ifundefined{KV@#2@\CurrentOption}{}{\edef\@tempa{\@tempa,\CurrentOption,}}}%
 \edef\@tempa{\noexpand\setkeys{newlistokkey}{\@tempa}}%
 \@tempa%
+
 
 \if@tikz
 \RequirePackage{tikz}\usetikzlibrary{calc,through,intersections,backgrounds,arrows}
@@ -159,15 +163,18 @@
 
 
 % ===============================================================
-% Стандартный размер страницы
+% РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№ СЂР°Р·РјРµСЂ СЃС‚СЂР°РЅРёС†С‹
 % Standart A4 paper size in true units for proper magnification
 % ===============================================================
+\def\aaaappage{
 \global\setlength\paperheight  {297truemm}%
-\global\setlength\paperwidth   {210truemm}%
 \global\setlength\pdfpageheight{297truemm}%
+\global\setlength\paperwidth   {210truemm}%
 \global\setlength\pdfpagewidth {210truemm}%
 \global\setlength\textheight   {260truemm}%
+\global\setlength\vsize        {260truemm}%
 \global\setlength\textwidth    {180truemm}%
+\global\setlength\hsize        {180truemm}%
 \global\setlength\hoffset      {-1truein}%
 \global\setlength\voffset      {-1truein}%
 \global\setlength\pdfhorigin   {1truein}%
@@ -177,21 +184,63 @@
 \global\setlength\leftskip     {0truemm}%
 \global\setlength\rightskip    {0truemm}%
 \global\setlength\headsep      {25truept}%
+}
+\def\aaaaappage{
+\global\setlength\paperheight  {210truemm}%
+\global\setlength\pdfpageheight{210truemm}%
+\global\setlength\paperwidth   {148truemm}%
+\global\setlength\pdfpagewidth {148truemm}%
+\global\setlength\textheight   {199truemm}%
+\global\setlength\vsize        {199truemm}%
+\global\setlength\textwidth    {134truemm}%
+\global\setlength\hsize        {134truemm}%
+\global\setlength\hoffset      {-1truein}%
+\global\setlength\voffset      {-1truein}%
+\global\setlength\pdfhorigin   {1truein}%
+\global\setlength\pdfvorigin   {1truein}%
+\global\setlength\oddsidemargin{7truemm}%
+\global\setlength\topmargin    {7truemm}%
+\global\setlength\leftskip     {0truemm}%
+\global\setlength\rightskip    {0truemm}%
+\global\setlength\headsep      {-5truemm}%
+}
+
+\def\aaaaaalpage{
+\global\setlength\paperheight  {105truemm}%
+\global\setlength\pdfpageheight{105truemm}%
+\global\setlength\paperwidth   {148truemm}%
+\global\setlength\pdfpagewidth {148truemm}%
+\global\setlength\textheight   {99truemm}%
+\global\setlength\vsize        {99truemm}%
+\global\setlength\textwidth    {134truemm}%
+\global\setlength\hsize        {134truemm}%
+\global\setlength\hoffset      {-1truein}%
+\global\setlength\voffset      {-1truein}%
+\global\setlength\pdfhorigin   {1truein}%
+\global\setlength\pdfvorigin   {1truein}%
+\global\setlength\oddsidemargin{7truemm}%
+\global\setlength\topmargin    {7truemm}%
+\global\setlength\leftskip     {0truemm}%
+\global\setlength\rightskip    {0truemm}%
+\global\setlength\headsep      {-5truemm}%
+}
+
+\aaaappage
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Оформление страницы
+% РћС„РѕСЂРјР»РµРЅРёРµ СЃС‚СЂР°РЅРёС†С‹
 % ===============================================================
 \pagestyle{empty}
 \frenchspacing
 \righthyphenmin 2
 \global\overfullrule=0truept
-\newcommand{\spacer}{\vspace{2mm plus 2mm minus 1.5mm}}
+\newcommand{\spacer}{\vspace{2mm plus 0.75mm minus 1.5mm}}
 % \linepenalty=50
 % TeX shouldn't break formulas
-\global\relpenalty=10000  %   запрещаем разрывать формулы
+\global\relpenalty=10000  %   Р·Р°РїСЂРµС‰Р°РµРј СЂР°Р·СЂС‹РІР°С‚СЊ С„РѕСЂРјСѓР»С‹
 \global\binoppenalty=10000%
 % \global\widowpenalty=9999%
 % \global\interlinepenalty=0%
@@ -208,7 +257,7 @@
 
 
 % ===============================================================
-% Для сохранения текущих размеров полей и последующего восстановления
+% Р”Р»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ С‚РµРєСѓС‰РёС… СЂР°Р·РјРµСЂРѕРІ РїРѕР»РµР№ Рё РїРѕСЃР»РµРґСѓСЋС‰РµРіРѕ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёСЏ
 % Variables for saving current paper sizes
 % ===============================================================
 \newlength{\@hoZ}\newlength{\@omZ}\newlength{\@emZ}\newlength{\@voZ}\newlength{\@tmZ}
@@ -217,32 +266,32 @@
 \global\@hoZ=\hoffset\global\@omZ=\oddsidemargin\global\@emZ=\evensidemargin%
 \global\@voZ=\voffset\global\@inZ=\parindent\global\@tmZ=\topmargin%
 \global\@hhZ=\headheight\global\@hsZ=\headsep\global\@twZ=\textwidth\global\@thZ=\textheight}
-% Для сохранения дефолтных отбивок вокруг строк
+% Р”Р»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ РґРµС„РѕР»С‚РЅС‹С… РѕС‚Р±РёРІРѕРє РІРѕРєСЂСѓРі СЃС‚СЂРѕРє
 % Variables for saving current line skip
 \newlength{\@oldbls}\setlength{\@oldbls}{\baselineskip}
 \newlength{\@oldls}\setlength{\@oldls}{\lineskip}
 \newlength{\@oldlsl}\setlength{\@oldlsl}{\lineskiplimit}
 %
-\let\СохранитьРазмеры=\SaveMargins
+\let\РЎРѕС…СЂР°РЅРёС‚СЊР Р°Р·РјРµСЂС‹=\SaveMargins
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Запрещаем разрывать формулы
+% Р—Р°РїСЂРµС‰Р°РµРј СЂР°Р·СЂС‹РІР°С‚СЊ С„РѕСЂРјСѓР»С‹
 % TeX shouldn't break formulas
 % ===============================================================
 \newcommand{\BreakFormulas}{\global\relpenalty=500\global\binoppenalty=700}
 \newcommand{\DoNotBreakFormulas}{\global\relpenalty=10000\global\binoppenalty=10000}
 %
-\let\РазрыватьФормулы=\BreakFormulas
-\let\НеРазрыватьФормулы=\DoNotBreakFormulas
+\let\Р Р°Р·СЂС‹РІР°С‚СЊР¤РѕСЂРјСѓР»С‹=\BreakFormulas
+\let\РќРµР Р°Р·СЂС‹РІР°С‚СЊР¤РѕСЂРјСѓР»С‹=\DoNotBreakFormulas
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% шрифты
+% С€СЂРёС„С‚С‹
 % fonts
 % ===============================================================
 \renewcommand{\bfdefault}{b}
@@ -250,14 +299,13 @@
 \DeclareSymbolFontAlphabet{\mathscr}{rsfs}
 \let\phi=\varphi
 \let\nothing=\varnothing
-\let\rho=\varrho
 \let\epsilon=\varepsilon
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Замечания, разделы
+% Р—Р°РјРµС‡Р°РЅРёСЏ, СЂР°Р·РґРµР»С‹
 % Notes, sections and additional sections
 % ===============================================================
 \newcommand{\rnote}[1]{\spacer\hrule{\footnotesize\noindent\strut\ignorespaces#1\strut\hrule\spacer}}
@@ -270,32 +318,32 @@
 \def\@xpage[#1]{\newpage\ifnum\count0=2\IncreaseHeight{#1}\fi}
 \def\@ypage{\newpage\ifnum\count0=2\IncreaseHeight{-7truemm}\fi}
 %
-\let\раздел=\Sect
-\let\допраздел=\AdditSect
-\let\страница=\ChangePageSize
+\let\СЂР°Р·РґРµР»=\Sect
+\let\РґРѕРїСЂР°Р·РґРµР»=\AdditSect
+\let\СЃС‚СЂР°РЅРёС†Р°=\ChangePageSize
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Выделения текста
+% Р’С‹РґРµР»РµРЅРёСЏ С‚РµРєСЃС‚Р°
 % Text marking
 % ===============================================================
 \def\mark#1 {\textit{#1}\/\xspace}
 \def\markI#1 {\textit{#1}\/\xspace}
 \def\markB#1 {\textbf{#1}\xspace}
 %
-\let\выд=\mark
-\let\выдк=\markI
-\let\выдд=\markB
-\let\выдж=\markB
-\newcommand{\help}[1]{({\small Подсказка: }{\reflectbox{\hbox{\footnotesize{#1}}}})}
+\let\РІС‹Рґ=\mark
+\let\РІС‹РґРє=\markI
+\let\РІС‹РґРґ=\markB
+\let\РІС‹РґР¶=\markB
+\newcommand{\help}[1]{({\small РџРѕРґСЃРєР°Р·РєР°: }{\reflectbox{\hbox{\footnotesize{#1}}}})}
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Управление размером страницы
+% РЈРїСЂР°РІР»РµРЅРёРµ СЂР°Р·РјРµСЂРѕРј СЃС‚СЂР°РЅРёС†С‹
 % Commands to set page margins
 % ===============================================================
 \newlength{\@tmp}
@@ -324,17 +372,17 @@
 \newcommand{\SetIndents}[2]{\par\global\leftskip=#1\global\rightskip=#2}
 \newcommand{\DefaultIndents}{\SetIndents{0truept}{0truept}}
 %
-\let\УвеличитьВысоту=\IncreaseHeight
-\let\УвеличитьШирину=\IncreaseWidth
-\let\УстановитьГраницы=\SetIndents
-\let\ВосстановитьГраницы=\DefaultIndents
+\let\РЈРІРµР»РёС‡РёС‚СЊР’С‹СЃРѕС‚Сѓ=\IncreaseHeight
+\let\РЈРІРµР»РёС‡РёС‚СЊРЁРёСЂРёРЅСѓ=\IncreaseWidth
+\let\РЈСЃС‚Р°РЅРѕРІРёС‚СЊР“СЂР°РЅРёС†С‹=\SetIndents
+\let\Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊР“СЂР°РЅРёС†С‹=\DefaultIndents
 
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Управление пробелами вокруг пунктов и промежутками между строками
+% РЈРїСЂР°РІР»РµРЅРёРµ РїСЂРѕР±РµР»Р°РјРё РІРѕРєСЂСѓРі РїСѓРЅРєС‚РѕРІ Рё РїСЂРѕРјРµР¶СѓС‚РєР°РјРё РјРµР¶РґСѓ СЃС‚СЂРѕРєР°РјРё
 % Spaced around items and skips between lines
 % ===============================================================
 \newcommand{\IncreaseItemSpaces}[2]{
@@ -368,27 +416,27 @@
 \normalsize
 }
 %
-\let\УвеличитьПробелы=\IncreaseItemSpaces
-\let\ВосстановитьПробелы=\DefaultItemSpaces
-\let\УвеличитьПромежутки=\IncreaseLineSkip
-\let\ВосстановитьПромежутки=\DefaultLineSkip
+\let\РЈРІРµР»РёС‡РёС‚СЊРџСЂРѕР±РµР»С‹=\IncreaseItemSpaces
+\let\Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊРџСЂРѕР±РµР»С‹=\DefaultItemSpaces
+\let\РЈРІРµР»РёС‡РёС‚СЊРџСЂРѕРјРµР¶СѓС‚РєРё=\IncreaseLineSkip
+\let\Р’РѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊРџСЂРѕРјРµР¶СѓС‚РєРё=\DefaultLineSkip
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Счётчики задач, пунктов, определений
+% РЎС‡С‘С‚С‡РёРєРё Р·Р°РґР°С‡, РїСѓРЅРєС‚РѕРІ, РѕРїСЂРµРґРµР»РµРЅРёР№
 % Problem, item and definition counters
 % ===============================================================
 \newcounter{problemnum}
 \newcounter{itemnum}
-\newcounter{definitionnum}
+% \newcounter{definitionnum}
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Инициализация кондуитов
+% РРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РєРѕРЅРґСѓРёС‚РѕРІ
 % Logbooks
 % ===============================================================
 \newsavebox{\@graybox}
@@ -408,8 +456,8 @@
 \newtoks\@filename            \@filename={spisok.tex}
 \newtoks\@cell
 \@cell={\vbox to 0.8\@cellHeight{\vss\hbox{\strut\arabic{@studentnum}.}\vss}\stepcounter{@studentnum}& & \ }
-\newtoks\список
-\newtoks\пометка
+\newtoks\СЃРїРёСЃРѕРє
+\newtoks\РїРѕРјРµС‚РєР°
 \newtoks\@xmlTableW           \@xmlTableW={<?xml version='1.0'?>\par}
 \newlength{\@cellHeight}
 \newlength{\@cellWidth}
@@ -431,11 +479,11 @@
 
 
 % ===============================================================
-% Восстановление исходных параметров
+% Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ РёСЃС…РѕРґРЅС‹С… РїР°СЂР°РјРµС‚СЂРѕРІ
 % Commands to return back defaults
 % ===============================================================
 \newcommand{\ResetNumbers}{%
-    \global\setcounter{problemnum}{0}  \global\setcounter{itemnum}{0}  \global\setcounter{definitionnum}{0}
+    \global\setcounter{problemnum}{0}  \global\setcounter{itemnum}{0}  %\global\setcounter{definitionnum}{0}
 }
 \newcommand{\ZeroMargins}{
 \setlength{\hoffset}{-1truein}
@@ -473,34 +521,34 @@
     %\global\@cell={\arabic{@studentnum}\stepcounter{@studentnum}.\phantom{\vrule height\@cellHeight}& \ }
     \global\@complexity={}}
 %
-\let\ОбнулитьКондуит=\ResetLogbook
-\let\ОбнулитьДанные=\ResetNumbers
-\let\ЗанулитьРазмеры=\ZeroMargins
-\let\ОбнулитьРазмеры=\DefaultMargins
+\let\РћР±РЅСѓР»РёС‚СЊРљРѕРЅРґСѓРёС‚=\ResetLogbook
+\let\РћР±РЅСѓР»РёС‚СЊР”Р°РЅРЅС‹Рµ=\ResetNumbers
+\let\Р—Р°РЅСѓР»РёС‚СЊР Р°Р·РјРµСЂС‹=\ZeroMargins
+\let\РћР±РЅСѓР»РёС‚СЊР Р°Р·РјРµСЂС‹=\DefaultMargins
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Параметры листка, задачи, кондуита
+% РџР°СЂР°РјРµС‚СЂС‹ Р»РёСЃС‚РєР°, Р·Р°РґР°С‡Рё, РєРѕРЅРґСѓРёС‚Р°
 % ===============================================================
-\newif\if@psevdop          \@psevdoptrue          %для псевдопунктов
-\newif\if@zadachastarted   \@zadachastartedfalse  %признак начавшейся задачи
-\newif\if@firstitem        \@firstitemtrue        %признак первого пункта в задаче
+\newif\if@psevdop          \@psevdoptrue          %РґР»СЏ РїСЃРµРІРґРѕРїСѓРЅРєС‚РѕРІ
+\newif\if@zadachastarted   \@zadachastartedfalse  %РїСЂРёР·РЅР°Рє РЅР°С‡Р°РІС€РµР№СЃСЏ Р·Р°РґР°С‡Рё
+\newif\if@firstitem        \@firstitemtrue        %РїСЂРёР·РЅР°Рє РїРµСЂРІРѕРіРѕ РїСѓРЅРєС‚Р° РІ Р·Р°РґР°С‡Рµ
 \newcount\@dprobl
 \newcount\@dpunct
-\newif\ifdownlegend       \downlegendtrue       %начилие нумерации в кондуите снизу
-\newif\ifnopunkts         \nopunktstrue         %выделение дополнительного места для пунктов
-\newif\iflandscape        \landscapetrue        %признак портрета
-\newif\ifproblemfinished  \problemfinishedtrue  %проверка наличия конца задачи
-\newif\ifmakeconduits     \makeconduitstrue     %необходимость делать кондуит
-\newif\if@nevstrochku      \@nevstrochkufalse     %пункты в строчку
-\newif\if@dopchast         \@dopchastfalse        %признак дополнительной части: далее всё дополн.
+\newif\ifdownlegend       \downlegendtrue       %РЅР°С‡РёР»РёРµ РЅСѓРјРµСЂР°С†РёРё РІ РєРѕРЅРґСѓРёС‚Рµ СЃРЅРёР·Сѓ
+\newif\ifnopunkts         \nopunktstrue         %РІС‹РґРµР»РµРЅРёРµ РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕРіРѕ РјРµСЃС‚Р° РґР»СЏ РїСѓРЅРєС‚РѕРІ
+\newif\iflandscape        \landscapetrue        %РїСЂРёР·РЅР°Рє РїРѕСЂС‚СЂРµС‚Р°
+\newif\ifproblemfinished  \problemfinishedtrue  %РїСЂРѕРІРµСЂРєР° РЅР°Р»РёС‡РёСЏ РєРѕРЅС†Р° Р·Р°РґР°С‡Рё
+\newif\ifmakeconduits     \makeconduitstrue     %РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚СЊ РґРµР»Р°С‚СЊ РєРѕРЅРґСѓРёС‚
+\newif\if@nevstrochku      \@nevstrochkufalse     %РїСѓРЅРєС‚С‹ РІ СЃС‚СЂРѕС‡РєСѓ
+\newif\if@dopchast         \@dopchastfalse        %РїСЂРёР·РЅР°Рє РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕР№ С‡Р°СЃС‚Рё: РґР°Р»РµРµ РІСЃС‘ РґРѕРїРѕР»РЅ.
 %-----end----------end----------end----------end----------end----
 
 
 % ===============================================================
-% Создание заголовка
+% РЎРѕР·РґР°РЅРёРµ Р·Р°РіРѕР»РѕРІРєР°
 % ===============================================================
 %
 \newtoks\@listname       \@listname       ={}
@@ -534,60 +582,60 @@
 
 
 %
-\let\Заголовок=\ListTitle
-\let\Подзаголовок=\ListSubtitle
-\let\НомерЛистка=\ListNumber
-\let\НомерСобеседования=\ExamNumber
-\let\ДатаЛистка=\ListDate
-\let\Эпиграф=\ListEpigraph
-\let\НадНомеромЛистка=\AboveListNumber
-\let\Оценки=\MarksBorders
+\let\Р—Р°РіРѕР»РѕРІРѕРє=\ListTitle
+\let\РџРѕРґР·Р°РіРѕР»РѕРІРѕРє=\ListSubtitle
+\let\РќРѕРјРµСЂР›РёСЃС‚РєР°=\ListNumber
+\let\РќРѕРјРµСЂРЎРѕР±РµСЃРµРґРѕРІР°РЅРёСЏ=\ExamNumber
+\let\Р”Р°С‚Р°Р›РёСЃС‚РєР°=\ListDate
+\let\Р­РїРёРіСЂР°С„=\ListEpigraph
+\let\РќР°РґРќРѕРјРµСЂРѕРјР›РёСЃС‚РєР°=\AboveListNumber
+\let\РћС†РµРЅРєРё=\MarksBorders
 
 
 
 
 
-% Здесь определяется то, как выглядят части заголовка
-\def\theListok{Листок \No\/}
+% Р—РґРµСЃСЊ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ С‚Рѕ, РєР°Рє РІС‹РіР»СЏРґСЏС‚ С‡Р°СЃС‚Рё Р·Р°РіРѕР»РѕРІРєР°
+\def\theListok{Р›РёСЃС‚РѕРє \No\/}
 \def\theDate{}
 \def\theFullListok{\sf \theListok\the\@listnum}%
 \def\theFullTitle{\large{\sf \the\@listname}}%
-\def\theMarks{ з. на 5/4/3}
+\def\theMarks{ Р·. РЅР° 5/4/3}
 
-% В зависимости от того, указана ли дополнительная строчка, делаем разный вывод
+% Р’ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РѕРіРѕ, СѓРєР°Р·Р°РЅР° Р»Рё РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ СЃС‚СЂРѕС‡РєР°, РґРµР»Р°РµРј СЂР°Р·РЅС‹Р№ РІС‹РІРѕРґ
 \def\theFullListok{%
 \setbox91=\hbox{\the\@abovelistnum}\setbox92=\hbox{\the\@listnum}%
 \ifdim\wd91>.5pt%
-\ifdim\wd92>.5pt% И то, и другое заполнено
+\ifdim\wd92>.5pt% Р С‚Рѕ, Рё РґСЂСѓРіРѕРµ Р·Р°РїРѕР»РЅРµРЅРѕ
 \hbox{\lefteqn{\raise2.3mm\hbox{\sf \the\@abovelistnum}}\lower2.3mm\hbox{\sf \theListok\the\@listnum}}%
-\else% Только то, что над листком
+\else% РўРѕР»СЊРєРѕ С‚Рѕ, С‡С‚Рѕ РЅР°Рґ Р»РёСЃС‚РєРѕРј
 \sf \the\@abovelistnum%
 \fi%
-\else% Только сам номер листка
+\else% РўРѕР»СЊРєРѕ СЃР°Рј РЅРѕРјРµСЂ Р»РёСЃС‚РєР°
 \sf \theListok\the\@listnum%
 \fi}
 
-% В зависимости от того, указана ли дополнительная строчка, делаем разный вывод
+% Р’ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ С‚РѕРіРѕ, СѓРєР°Р·Р°РЅР° Р»Рё РґРѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ СЃС‚СЂРѕС‡РєР°, РґРµР»Р°РµРј СЂР°Р·РЅС‹Р№ РІС‹РІРѕРґ
 \def\theFullDate{%
 \setbox91=\hbox{\the\@marksborders}\setbox92=\hbox{\the\@listdate}%
 \ifdim\wd91>.5pt%
-\ifdim\wd92>.5pt% И то, и другое заполнено
+\ifdim\wd92>.5pt% Р С‚Рѕ, Рё РґСЂСѓРіРѕРµ Р·Р°РїРѕР»РЅРµРЅРѕ
 \hbox{\lefteqn{\raise2.3mm\hbox{\sf\theDate\the\@listdate}}\lower2.3mm\hbox{\the\@marksborders\theMarks}}%
-\else% Только то, что над листком
+\else% РўРѕР»СЊРєРѕ С‚Рѕ, С‡С‚Рѕ РЅР°Рґ Р»РёСЃС‚РєРѕРј
 \sf \the\@marksborders\theMarks%
 \fi%
-\else% Только сам номер листка
+\else% РўРѕР»СЊРєРѕ СЃР°Рј РЅРѕРјРµСЂ Р»РёСЃС‚РєР°
 \sf \sf\theDate\the\@listdate%
 \fi}
 
 
 
-% Заголовок
+% Р—Р°РіРѕР»РѕРІРѕРє
 \def\theFullTitleLine{%
-%вычисляем максимальную ширину самого названия листка
+%РІС‹С‡РёСЃР»СЏРµРј РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ С€РёСЂРёРЅСѓ СЃР°РјРѕРіРѕ РЅР°Р·РІР°РЅРёСЏ Р»РёСЃС‚РєР°
 \settowidth{\@tmp}{\theFullListok}\settowidth{\@ttmp}{\theFullDate}\@tttmp = \textwidth%
 \ifdim\@ttmp>\@tmp \@tmp = \@ttmp\fi\addtolength{\@tttmp}{-4truemm}\addtolength{\@tttmp}{-2\@tmp}%
-%вставляем заголовок
+%РІСЃС‚Р°РІР»СЏРµРј Р·Р°РіРѕР»РѕРІРѕРє
 \noindent\hbox to \textwidth{%
 \hbox to 0truecm{\theFullListok}%
 \hss%
@@ -598,7 +646,7 @@
 \hbox to 0truecm{\hss\theFullDate}%
 }\par}%
 
-% Подзаголовок
+% РџРѕРґР·Р°РіРѕР»РѕРІРѕРє
 \def\theFullSubtitleLine{\setbox91=\hbox{\the\@listsubname}%
 \ifdim\wd91>.5pt%
 \noindent\hbox to \textwidth{\hss\begin{minipage}{\@tttmp}%
@@ -606,7 +654,7 @@
 \end{minipage}\hss}\par%
 \fi}
 
-% Эпиграф
+% Р­РїРёРіСЂР°С„
 \def\theEpigraphLine{\setbox91=\hbox{\the\@listEpigraph{}\the\@listEpigraphh}%
 \ifdim\wd91>.5pt%
 \vspace{-2mm}\begin{flushright} \sf \the\@listEpigraph \par \it \the\@listEpigraphh \qquad\end{flushright}\vspace{-2mm}%
@@ -622,10 +670,10 @@
 
 
 \newcommand{\CreateTitle}{%
-%дальше --- не трогайте
+%РґР°Р»СЊС€Рµ --- РЅРµ С‚СЂРѕРіР°Р№С‚Рµ
 \@AddExpand{<listok number = '\the\@listnum' description='\the\@listname' type='1' date='\the\@listdate' marks='\the\@marksborders'>\par}{\@xmlTableW}%
-%\@AddExpand{<listok number = '\the\@listnum' description='занятие' type='1' date='\the\@listdate'>\par}{\@xmlTableW}%
-%\@AddExpand{\ \ <problem group='0' type='0'>Н</problem>\par}{\@xmlTableW}%
+%\@AddExpand{<listok number = '\the\@listnum' description='Р·Р°РЅСЏС‚РёРµ' type='1' date='\the\@listdate'>\par}{\@xmlTableW}%
+%\@AddExpand{\ \ <problem group='0' type='0'>Рќ</problem>\par}{\@xmlTableW}%
 \ResetNumbers%
 \ResetLogbook%
 \setbox91=\hbox{\the\@listnum}\ifdim\wd91<.5pt\def\theFullListok{}\def\@listNumberWithDot{}\fi%
@@ -638,7 +686,7 @@
 \@listEpigraph={}\@listEpigraphh={}%
 \nopagebreak%
 }
-\let\СоздатьЗаголовок=\CreateTitle
+\let\РЎРѕР·РґР°С‚СЊР—Р°РіРѕР»РѕРІРѕРє=\CreateTitle
 
 
 \newcommand{\ShowPageHeader}{%
@@ -646,26 +694,26 @@
 \ifnum\count0=1\global\addtolength{\textheight}{-10truemm}\fi%
 \ifnum\count0=2\global\addtolength{\headsep}{10truemm}\fi%
 \ifnum\count0>1%
-\raisebox{-13truemm}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil \hfil \hbox to 0pt{\hss\llap Страница \thepage}}}\fi}%
+\raisebox{-13truemm}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil \hfil \hbox to 0pt{\hss\llap РЎС‚СЂР°РЅРёС†Р° \thepage}}}\fi}%
 }
-\let\ВключитьКолонитул=\ShowPageHeader
-\let\ВключитьКолонтитул=\ShowPageHeader
+\let\Р’РєР»СЋС‡РёС‚СЊРљРѕР»РѕРЅРёС‚СѓР»=\ShowPageHeader
+\let\Р’РєР»СЋС‡РёС‚СЊРљРѕР»РѕРЅС‚РёС‚СѓР»=\ShowPageHeader
 \newcommand{\LecturePageHeader}{%
 \renewcommand{\@oddhead}{%
 \ifnum\count0=1\global\addtolength{\textheight}{-10truemm}\fi%
 \ifnum\count0=2\global\addtolength{\headsep}{10truemm}\fi%
 \ifnum\count0>1%
 \raisebox{-13truemm}[\headheight][0pt]{%
-\vbox{\hbox to \textwidth{\strut\hbox to 0pt{\sf\large\the\lecttitle} \hfil \hfil \hbox to 0pt{\hss\llap Страница \thepage}}%
+\vbox{\hbox to \textwidth{\strut\hbox to 0pt{\sf\large\the\lecttitle} \hfil \hfil \hbox to 0pt{\hss\llap РЎС‚СЂР°РЅРёС†Р° \thepage}}%
 \hrule}}\fi}%
 }
-\let\КолонитулЛекции=\LecturePageHeader
+\let\РљРѕР»РѕРЅРёС‚СѓР»Р›РµРєС†РёРё=\LecturePageHeader
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Оформление задач
+% РћС„РѕСЂРјР»РµРЅРёРµ Р·Р°РґР°С‡
 % ===============================================================
 
 
@@ -698,28 +746,28 @@
 \newcommand{\iproblemn}[1]{\setcounter{problemnum}{#1}\addtocounter{problemnum}{-1}\iproblem}
 \newcommand{\iiproblemn}[1]{\setcounter{problemnum}{#1}\addtocounter{problemnum}{-1}\iiproblem}
 \newcommand{\wproblemn}[1]{\setcounter{problemnum}{#1}\addtocounter{problemnum}{-1}\wproblem}
-\let\ссзадачан=\hhproblemn
-\let\сзадачан=\hproblemn
-\let\задачан=\problemn
-\let\взадачан=\iproblemn
-\let\ввзадачан=\iiproblemn
-\let\пввзадачан=\wiiproblemn
-\let\впвзадачан=\wiiproblemn
-\let\ввпзадачан=\wiiproblemn
-\let\пзадачан=\wproblemn
+\let\СЃСЃР·Р°РґР°С‡Р°РЅ=\hhproblemn
+\let\СЃР·Р°РґР°С‡Р°РЅ=\hproblemn
+\let\Р·Р°РґР°С‡Р°РЅ=\problemn
+\let\РІР·Р°РґР°С‡Р°РЅ=\iproblemn
+\let\РІРІР·Р°РґР°С‡Р°РЅ=\iiproblemn
+\let\РїРІРІР·Р°РґР°С‡Р°РЅ=\wiiproblemn
+\let\РІРїРІР·Р°РґР°С‡Р°РЅ=\wiiproblemn
+\let\РІРІРїР·Р°РґР°С‡Р°РЅ=\wiiproblemn
+\let\РїР·Р°РґР°С‡Р°РЅ=\wproblemn
 
 
-%здесь определяется то, как будет выглядеть задача
-\def\theProblem{Задача\hspace{1.1truemm}}
+%Р·РґРµСЃСЊ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ С‚Рѕ, РєР°Рє Р±СѓРґРµС‚ РІС‹РіР»СЏРґРµС‚СЊ Р·Р°РґР°С‡Р°
+\def\theProblem{Р—Р°РґР°С‡Р°\hspace{1.1truemm}}
 \def\theFullProblem{{\bf{\theProblem\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
 
 
 
-\def\pproblem{\@ifnextchar[{\xxproblem}{\yyproblem}}%если Задача 1. (Теорема ферма)
+\def\pproblem{\@ifnextchar[{\xxproblem}{\yyproblem}}%РµСЃР»Рё Р—Р°РґР°С‡Р° 1. (РўРµРѕСЂРµРјР° С„РµСЂРјР°)
 \def\xxproblem[#1]{\yyproblem {}%
 \hspace{-.8truemm}({\it #1\/})\hspace{1.9truemm}\nolinebreak[4]\ignorespaces}
 \def\yyproblem{\@zadachastartedtrue%
-\ifproblemfinished\else\errmessage{Предыдущая задача не закончена!}\fi
+\ifproblemfinished\else\errmessage{РџСЂРµРґС‹РґСѓС‰Р°СЏ Р·Р°РґР°С‡Р° РЅРµ Р·Р°РєРѕРЅС‡РµРЅР°!}\fi
 \problemfinishedfalse%
 \refstepcounter{problemnum}\setcounter{itemnum}{0}%
 \stepcounter{@TotalProblems}%
@@ -731,7 +779,7 @@
 \newcommand{\eproblem}
 {
   \if@zadachastarted\else
-    \errmessage{Конец задачи без начала задачи!}
+    \errmessage{РљРѕРЅРµС† Р·Р°РґР°С‡Рё Р±РµР· РЅР°С‡Р°Р»Р° Р·Р°РґР°С‡Рё!}
   \fi
   \par
   \spacer
@@ -776,26 +824,26 @@
     \endMakeFramed
   \fi%
 }
-\let\endзадача=\eproblem
-\let\endпзадача=\eproblem
-\let\кзадача=\eproblem
+\let\endР·Р°РґР°С‡Р°=\eproblem
+\let\endРїР·Р°РґР°С‡Р°=\eproblem
+\let\РєР·Р°РґР°С‡Р°=\eproblem
 \let\eprb=\eproblem
-\let\кздч=\eproblem
+\let\РєР·РґС‡=\eproblem
 
-\let\ссздч=\hhproblem
-\let\сздч=\hproblem
-\let\здч=\problem
-\let\вздч=\iproblem
-\let\ввздч=\iiproblem
-\let\ссзадача=\hhproblem
-\let\сзадача=\hproblem
-\let\задача=\problem
-\let\взадача=\iproblem
-\let\ввзадача=\iiproblem
-\let\пввзадача=\wiiproblem
-\let\впвзадача=\wiiproblem
-\let\ввпзадача=\wiiproblem
-\let\пзадача=\wproblem
+\let\СЃСЃР·РґС‡=\hhproblem
+\let\СЃР·РґС‡=\hproblem
+\let\Р·РґС‡=\problem
+\let\РІР·РґС‡=\iproblem
+\let\РІРІР·РґС‡=\iiproblem
+\let\СЃСЃР·Р°РґР°С‡Р°=\hhproblem
+\let\СЃР·Р°РґР°С‡Р°=\hproblem
+\let\Р·Р°РґР°С‡Р°=\problem
+\let\РІР·Р°РґР°С‡Р°=\iproblem
+\let\РІРІР·Р°РґР°С‡Р°=\iiproblem
+\let\РїРІРІР·Р°РґР°С‡Р°=\wiiproblem
+\let\РІРїРІР·Р°РґР°С‡Р°=\wiiproblem
+\let\РІРІРїР·Р°РґР°С‡Р°=\wiiproblem
+\let\РїР·Р°РґР°С‡Р°=\wproblem
 \let\hhprb=\hhproblem
 \let\hprb=\hproblem
 \let\wprb=\wproblem
@@ -803,12 +851,12 @@
 \let\iprb=\iproblem
 \let\iiprb=\iiproblem
 
-\let\endссздч=\eproblem
-\let\endсздч=\eproblem
-\let\endпздч=\eproblem
-\let\endздч=\eproblem
-\let\endвздч=\eproblem
-\let\endввздч=\eproblem
+\let\endСЃСЃР·РґС‡=\eproblem
+\let\endСЃР·РґС‡=\eproblem
+\let\endРїР·РґС‡=\eproblem
+\let\endР·РґС‡=\eproblem
+\let\endРІР·РґС‡=\eproblem
+\let\endРІРІР·РґС‡=\eproblem
 \let\endhhproblem=\eproblem
 \let\endhproblem=\eproblem
 \let\endproblem=\eproblem
@@ -821,19 +869,19 @@
 \let\endwprb=\eproblem
 \let\endiprb=\eproblem
 \let\endiiprb=\eproblem
-\def\сспункт{\hhitm}
-\def\спункт{\hitm}
-\def\пункт{\itm}
-\def\впункт{\iitm}
-\def\ппункт{\witm}
-\def\ввпункт{\iiitm}
-\def\ппункт{\witm}
+\def\СЃСЃРїСѓРЅРєС‚{\hhitm}
+\def\СЃРїСѓРЅРєС‚{\hitm}
+\def\РїСѓРЅРєС‚{\itm}
+\def\РІРїСѓРЅРєС‚{\iitm}
+\def\РїРїСѓРЅРєС‚{\witm}
+\def\РІРІРїСѓРЅРєС‚{\iiitm}
+\def\РїРїСѓРЅРєС‚{\witm}
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Оформление пунктов
+% РћС„РѕСЂРјР»РµРЅРёРµ РїСѓРЅРєС‚РѕРІ
 % ===============================================================
 \newlength{\@SpaceBeforeItem}
 \newlength{\@SpaceAfterItem}
@@ -847,12 +895,12 @@
 \newcommand{\hitmn}[1]{\setcounter{itemnum}{#1}\addtocounter{itemnum}{-1}\hitm}
 \newcommand{\hhitmn}[1]{\setcounter{itemnum}{#1}\addtocounter{itemnum}{-1}\hhitm}
 \newcommand{\witmn}[1]{\setcounter{itemnum}{#1}\addtocounter{itemnum}{-1}\witm}
-\let\пунктн=\itmn
-\let\впунктн=\iitmn
-\let\ввпунктн=\iiitmn
-\let\ппунктн=\witmn
-\let\спунктн=\hitmn
-\let\сспунктн=\hhitmn
+\let\РїСѓРЅРєС‚РЅ=\itmn
+\let\РІРїСѓРЅРєС‚РЅ=\iitmn
+\let\РІРІРїСѓРЅРєС‚РЅ=\iiitmn
+\let\РїРїСѓРЅРєС‚РЅ=\witmn
+\let\СЃРїСѓРЅРєС‚РЅ=\hitmn
+\let\СЃСЃРїСѓРЅРєС‚РЅ=\hhitmn
 
 
 \newlength{\@strutdepth}
@@ -905,33 +953,33 @@
 
 
 
-%здесь определяется то, как выглядят пункты
-\def\ПробелПередПунктомВСтрочку{\noindent\hskip\@SpaceBeforeItem\relax}
-\def\ПробелПередПунктомНеВСтрочку{\par\noindent\hangindent=\parindent\hangafter=1}
+%Р·РґРµСЃСЊ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ С‚Рѕ, РєР°Рє РІС‹РіР»СЏРґСЏС‚ РїСѓРЅРєС‚С‹
+\def\РџСЂРѕР±РµР»РџРµСЂРµРґРџСѓРЅРєС‚РѕРјР’РЎС‚СЂРѕС‡РєСѓ{\noindent\hskip\@SpaceBeforeItem\relax}
+\def\РџСЂРѕР±РµР»РџРµСЂРµРґРџСѓРЅРєС‚РѕРјРќРµР’РЎС‚СЂРѕС‡РєСѓ{\par\noindent\hangindent=\parindent\hangafter=1}
 \def\theFullItem{\hbox to\@starspace{{\bf{\ralph{itemnum})\the\@star}}\hfill}}
 
 
 
-\newcommand{\ppunct}{\@ifnextchar[{\xxпункт}{\yyпункт}}
-\def\xxпункт[#1]{\yyпункт({\it #1\/})\hspace{1.9truemm}\nolinebreak[4]\ignorespaces}
-\def\yyпункт{%
-\if@nevstrochku\ПробелПередПунктомНеВСтрочку\else\ПробелПередПунктомВСтрочку\fi%
+\newcommand{\ppunct}{\@ifnextchar[{\xxРїСѓРЅРєС‚}{\yyРїСѓРЅРєС‚}}
+\def\xxРїСѓРЅРєС‚[#1]{\yyРїСѓРЅРєС‚({\it #1\/})\hspace{1.9truemm}\nolinebreak[4]\ignorespaces}
+\def\yyРїСѓРЅРєС‚{%
+\if@nevstrochku\РџСЂРѕР±РµР»РџРµСЂРµРґРџСѓРЅРєС‚РѕРјРќРµР’РЎС‚СЂРѕС‡РєСѓ\else\РџСЂРѕР±РµР»РџРµСЂРµРґРџСѓРЅРєС‚РѕРјР’РЎС‚СЂРѕС‡РєСѓ\fi%
 \theFullItem\nolinebreak[4]\if@marginalblock\@marginalblockfalse\@marginalblock\fi\ignorespaces%
 }
 
 
 
-\def\невСтрочку{\global\@nevstrochkutrue}
-\def\вСтрочку{\global\@nevstrochkufalse}%
-\newcommand{\сНовойСтроки}{\global\@nevstrochkutrue}
-\newcommand{\РазорватьСтроку}{\hfil\break}
+\def\РЅРµРІРЎС‚СЂРѕС‡РєСѓ{\global\@nevstrochkutrue}
+\def\РІРЎС‚СЂРѕС‡РєСѓ{\global\@nevstrochkufalse}%
+\newcommand{\СЃРќРѕРІРѕР№РЎС‚СЂРѕРєРё}{\global\@nevstrochkutrue}
+\newcommand{\Р Р°Р·РѕСЂРІР°С‚СЊРЎС‚СЂРѕРєСѓ}{\hfil\break}
 
 
 
-%\newcommand{\опр}{\begingroup\refstepcounter{definitionnum}\par\spacer\noindent%
-%{\bf{Определение\hspace{1.1truemm}\arabic{definitionnum}.}}\hspace{1.9truemm}\ignorespaces}
-%\newcommand{\копр}{\par\spacer\endgroup}
-%\let\endопр=\копр
+%\newcommand{\РѕРїСЂ}{\begingroup\refstepcounter{definitionnum}\par\spacer\noindent%
+%{\bf{РћРїСЂРµРґРµР»РµРЅРёРµ\hspace{1.1truemm}\arabic{definitionnum}.}}\hspace{1.9truemm}\ignorespaces}
+%\newcommand{\РєРѕРїСЂ}{\par\spacer\endgroup}
+%\let\endРѕРїСЂ=\РєРѕРїСЂ
 
 
 
@@ -940,7 +988,7 @@
 
 
 % ===============================================================
-% Неравенства, скобки
+% РќРµСЂР°РІРµРЅСЃС‚РІР°, СЃРєРѕР±РєРё
 % ===============================================================
 \renewcommand{\le}{\leqslant}
 \renewcommand{\leq}{\leqslant}
@@ -951,24 +999,43 @@
 \def\Vert#1\Vert{\left|\left|{#1}\right|\right|}
 
 
+\def\announcement{\vfill\vspace*{-3mm}\spacer\begingroup\center\small\em\ignorespaces}
+\def\endannouncement{\ignorespaces\par\endcenter\endgroup}
+% \def\announcement{\vfill\vspace*{-4mm}\spacer\begingroup\small\em\ignorespaces}
+% \def\endannouncement{\ignorespaces\endgroup\par}
+
+
+
+\def\impAnnouncement{\vfill\vspace*{-3mm}\spacer\noindent\Sbox\minipage{\dimexpr\linewidth-3.7mm}\begingroup\center\scshape}
+\def\endimpAnnouncement{\endcenter\endgroup\endminipage\endSbox\doublebox{\TheSbox}}
+
+
+
+
+\let\РѕР±СЉСЏРІР»РµРЅРёРµ=\announcement
+\let\РєРѕР±СЉСЏРІР»РµРЅРёРµ=\endannouncement
+\let\endРѕР±СЉСЏРІР»РµРЅРёРµ=\endannouncement
+\let\РІР°Р¶РЅРѕРµРћР±СЉСЏРІР»РµРЅРёРµ=\impAnnouncement
+\let\РєРІР°Р¶РЅРѕРµРћР±СЉСЏРІР»РµРЅРёРµ=\endimpAnnouncement
+\let\endРІР°Р¶РЅРѕРµРћР±СЉСЏРІР»РµРЅРёРµ=\endimpAnnouncement
 
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Изготовление Кондуита
+% РР·РіРѕС‚РѕРІР»РµРЅРёРµ РљРѕРЅРґСѓРёС‚Р°
 % ===============================================================
 
 
 
-\newcommand{\ГраницыКондуитаАльбом}
+\newcommand{\Р“СЂР°РЅРёС†С‹РљРѕРЅРґСѓРёС‚Р°РђР»СЊР±РѕРј}
 {
 \landscapetrue
 \setlength{\@LogbookHeight}{21truecm}
 \setlength{\@LogbookWidth}{29.7truecm}
 }
-\newcommand{\ГраницыКондуитаПортрет}
+\newcommand{\Р“СЂР°РЅРёС†С‹РљРѕРЅРґСѓРёС‚Р°РџРѕСЂС‚СЂРµС‚}
 {
 \landscapefalse
 \setlength{\@LogbookHeight}{29.7truecm}
@@ -978,15 +1045,15 @@
 \def\midlegend{
         \hline\hline
         \ifnopunkts
-          \multicolumn{3}{|||c|||}{\phantom{у}} \strut\the\@ProblemNumbers \\
+          \multicolumn{3}{|||c|||}{\phantom{Сѓ}} \strut\the\@ProblemNumbers \\
         \else
-          \multicolumn{3}{|||c|||}{\phantom{у\rule{0truemm}{3truemm}}} \the\@ItemNumbers \\
-          \multicolumn{3}{|||c|||}{\phantom{у\rule{0truemm}{2truemm}}} \the\@ProblemNumbers \\
+          \multicolumn{3}{|||c|||}{\phantom{Сѓ\rule{0truemm}{3truemm}}} \the\@ItemNumbers \\
+          \multicolumn{3}{|||c|||}{\phantom{Сѓ\rule{0truemm}{2truemm}}} \the\@ProblemNumbers \\
         \fi
         \hline\hline}
 
 
-\def\собственноКондуит
+\def\СЃРѕР±СЃС‚РІРµРЅРЅРѕРљРѕРЅРґСѓРёС‚
 {%
 \begin{minipage}{\@LogbookWidth}
 \vbox to \@LogbookHeight{
@@ -994,9 +1061,9 @@
   \vfill
   \vspace{20truemm minus 17truemm}
   \fontsize{13}{15}\selectfont
-  \setbox91=\hbox{\the\пометка}                                                    %по
-  \ifdim\wd91>.5pt                                                                 %мет
-    \hbox to \@LogbookWidth{\hss{\bf\fontsize{15}{15}\selectfont\the\пометка}\hspace{1.5truecm}}      %ка
+  \setbox91=\hbox{\the\РїРѕРјРµС‚РєР°}                                                    %РїРѕ
+  \ifdim\wd91>.5pt                                                                 %РјРµС‚
+    \hbox to \@LogbookWidth{\hss{\bf\fontsize{15}{15}\selectfont\the\РїРѕРјРµС‚РєР°}\hspace{1.5truecm}}      %РєР°
     \bigskip                                                                       %
   \fi
   \def\theFullTitle{\fontsize{15}{15}\selectfont\sf \the\@listname}%
@@ -1006,35 +1073,37 @@
   \fontsize{11}{13}\selectfont
   \hbox to \@LogbookWidth%
   {%
-    \hss%
-    \begin{tabular}{|||r|l||\the\@TableColumns|}
+    %\hss%
+    \hspace{1cm}%
+    \begin{tabular}{|||r|p{3mm}|l|||\the\@TableColumns|}
       \hline
-      \multicolumn{2}{|||c||}{\phantom{\rule{0truemm}{3.9truemm}}} \the\@ProblemNumbers \\
-      \ifnopunkts %ни у какой задачи нет пунктов
-        \multicolumn{2}{|||c||}{\phantom{\rule{0truemm}{1.9truemm}}\raisebox{2.5truemm}{Фамилия, Имя}} \the\@complexity \\
+      \multicolumn{3}{|||c|||}{\phantom{\rule{0truemm}{3.9truemm}}} \the\@ProblemNumbers \\
+      \ifnopunkts %РЅРё Сѓ РєР°РєРѕР№ Р·Р°РґР°С‡Рё РЅРµС‚ РїСѓРЅРєС‚РѕРІ
+        \multicolumn{3}{|||c|||}{\phantom{\rule{0truemm}{1.9truemm}}\raisebox{2.5truemm}{Р¤Р°РјРёР»РёСЏ, РРјСЏ}} \the\@complexity \\
       \else
-        \multicolumn{2}{|||c||}{\phantom{\rule{0truemm}{3.3truemm}}\raisebox{1.5truemm}[0truept][0truept]{Фамилия, Имя}} \the\@ItemNumbers \\
-        \multicolumn{2}{|||c||}{\phantom{\rule{0truemm}{2.5truemm}}} \the\@complexity \\
+        \multicolumn{3}{|||c|||}{\phantom{\rule{0truemm}{3.3truemm}}\raisebox{1.5truemm}[0truept][0truept]{Р¤Р°РјРёР»РёСЏ, РРјСЏ}} \the\@ItemNumbers \\
+        \multicolumn{3}{|||c|||}{\phantom{\rule{0truemm}{2.5truemm}}} \the\@complexity \\
       \fi
       \hline
       \hline
-      \the\список%
+      \the\СЃРїРёСЃРѕРє%
       \ifdownlegend%
         \hline
         \ifnopunkts
-          \multicolumn{2}{|||c||}{\phantom{у}} \strut\the\@ProblemNumbers \\
+          \multicolumn{3}{|||c|||}{\phantom{Сѓ}} \strut\the\@ProblemNumbers \\
         \else
-          \multicolumn{2}{|||c||}{\phantom{у\rule{0truemm}{3truemm}}} \the\@ItemNumbers \\
-          \multicolumn{2}{|||c||}{\phantom{у\rule{0truemm}{2truemm}}} \the\@ProblemNumbers \\
+          \multicolumn{3}{|||c|||}{\phantom{Сѓ\rule{0truemm}{3truemm}}} \the\@ItemNumbers \\
+          \multicolumn{3}{|||c|||}{\phantom{Сѓ\rule{0truemm}{2truemm}}} \the\@ProblemNumbers \\
         \fi
         \hline
       \fi
     \end{tabular}%
     \hss
-  }
-  \vspace{20truemm minus 17truemm}
-  \vfill
-\endgroup
+  }%
+  \ifcat\relax\detokenize\expandafter{\the\barcode}\relax\else\vspace{2mm}\noindent\centerline{\includegraphics[width=20cm]{\the\barcode}}\fi%
+  \vspace{20truemm minus 17truemm}%
+  \vfill%
+\endgroup%
 }
 \end{minipage}
 }
@@ -1044,18 +1113,18 @@
 \definecolor{classicrose}{rgb}{0.99, 0.88, 0.95}
 \newcommand{\CreateConduit}[2]%
 {%
-\ifproblemfinished\else\errmessage{Предыдущая задача не закончена!}\fi%
+\ifproblemfinished\else\errmessage{РџСЂРµРґС‹РґСѓС‰Р°СЏ Р·Р°РґР°С‡Р° РЅРµ Р·Р°РєРѕРЅС‡РµРЅР°!}\fi%
 \ifmakeconduits%
-  \СохранитьРазмеры%
+  \РЎРѕС…СЂР°РЅРёС‚СЊР Р°Р·РјРµСЂС‹%
   \begingroup%
   \setcounter{@studentnum}{1}%
   \input{\the\@filename}%
   \setlength{\@cellWidth}{#1}\setlength{\@cellHeight}{#2}%
   \sbox{\@graybox}{\textcolor{shadecolor}{\rule{\@cellWidth}{\@cellHeight}}}%
   \sbox{\@rosebox}{\textcolor{classicrose}{\rule{\@cellWidth}{\@cellHeight}}}%
-  \sbox{\@LogbookBox}{\собственноКондуит}%
+  \sbox{\@LogbookBox}{\СЃРѕР±СЃС‚РІРµРЅРЅРѕРљРѕРЅРґСѓРёС‚}%
   \newpage%
-  \ЗанулитьРазмеры%
+  \Р—Р°РЅСѓР»РёС‚СЊР Р°Р·РјРµСЂС‹%
   \thispagestyle{empty}%
   \iflandscape%
     \rotatebox{90}{\usebox{\@LogbookBox}}%
@@ -1064,25 +1133,25 @@
   \fi%
   \newpage%
   \endgroup%
-  \ОбнулитьРазмеры%
+  \РћР±РЅСѓР»РёС‚СЊР Р°Р·РјРµСЂС‹%
 \fi%
 }
-\let\СделатьКондуит=\CreateConduit
+\let\РЎРґРµР»Р°С‚СЊРљРѕРЅРґСѓРёС‚=\CreateConduit
 
 
 \newcommand{\CreateConduitFrom}[3]
 {%
 \@filename = {#3}%
-\СделатьКондуит{#1}{#2}%
+\РЎРґРµР»Р°С‚СЊРљРѕРЅРґСѓРёС‚{#1}{#2}%
 \@filename={spisok.tex}
 }
-\let\СделатьКондуитИз=\CreateConduitFrom
+\let\РЎРґРµР»Р°С‚СЊРљРѕРЅРґСѓРёС‚РР·=\CreateConduitFrom
 
 
 \newcommand{\PersonalConduitF}[3]%
 {
 \begingroup
-\ifproblemfinished\else\errmessage{Предыдущая задача не закончена!}\fi
+\ifproblemfinished\else\errmessage{РџСЂРµРґС‹РґСѓС‰Р°СЏ Р·Р°РґР°С‡Р° РЅРµ Р·Р°РєРѕРЅС‡РµРЅР°!}\fi
 \setlength{\@cellWidth}{196truemm}
 \dimen202=-.79truemm
 \count202=\value{@TotalProblems}
@@ -1122,7 +1191,7 @@
 \newcommand{\PersonalConduit}[2]%
 {
 \begingroup
-\ifproblemfinished\else\errmessage{Предыдущая задача не закончена!}\fi
+\ifproblemfinished\else\errmessage{РџСЂРµРґС‹РґСѓС‰Р°СЏ Р·Р°РґР°С‡Р° РЅРµ Р·Р°РєРѕРЅС‡РµРЅР°!}\fi
 \setlength{\@cellWidth}{196truemm}
 \dimen202=-.79truemm
 \count202=\value{problemnum}
@@ -1158,12 +1227,12 @@
 \vspace*{-2mm}
 \endgroup
 }
-\newcommand{\SeparateConduit}{\sbox{\@conduitsave}{\vbox{\ЛичныйКондуит{0mm}{6.5mm}}}\ОбнулитьКондуит}
-\newcommand{\InsertSeparatedConduit}{\noindent\usebox{\@conduitsave}\vspace{-3mm}\ЛичныйКондуит{0mm}{6.5mm}}
-\let\ЛичныйКондуит=\PersonalConduit
-\let\ЛичныйКондуитФ=\PersonalConduitF
-\let\РазделитьКондуит=\SeparateConduit
-\let\ВставитьКондуит=\InsertSeparatedConduit
+\newcommand{\SeparateConduit}{\sbox{\@conduitsave}{\vbox{\Р›РёС‡РЅС‹Р№РљРѕРЅРґСѓРёС‚{0mm}{6.5mm}}}\РћР±РЅСѓР»РёС‚СЊРљРѕРЅРґСѓРёС‚}
+\newcommand{\InsertSeparatedConduit}{\noindent\usebox{\@conduitsave}\vspace{-3mm}\Р›РёС‡РЅС‹Р№РљРѕРЅРґСѓРёС‚{0mm}{6.5mm}}
+\let\Р›РёС‡РЅС‹Р№РљРѕРЅРґСѓРёС‚=\PersonalConduit
+\let\Р›РёС‡РЅС‹Р№РљРѕРЅРґСѓРёС‚Р¤=\PersonalConduitF
+\let\Р Р°Р·РґРµР»РёС‚СЊРљРѕРЅРґСѓРёС‚=\SeparateConduit
+\let\Р’СЃС‚Р°РІРёС‚СЊРљРѕРЅРґСѓРёС‚=\InsertSeparatedConduit
 
 
 
@@ -1172,7 +1241,7 @@
 
 
 % ===============================================================
-%  Всё для лекций
+%  Р’СЃС‘ РґР»СЏ Р»РµРєС†РёР№
 % ===============================================================
 
 
@@ -1189,12 +1258,12 @@
 \vspace*{.6truecm}\centerline{\large \scshape\the\lectauthor}\vskip 1truecm plus 1truecm minus .6truecm}
 %\newbox{\comentbox}
 \newcommand{\@evrskip}{\par\spacer\noindent}
-\let\НазваниеЛекции=\LectureTitle
-\let\АвторЛекции=\LectureAuthor
-\let\СоздатьЗаголовокЛекции=\CreateLectureTitle
+\let\РќР°Р·РІР°РЅРёРµР›РµРєС†РёРё=\LectureTitle
+\let\РђРІС‚РѕСЂР›РµРєС†РёРё=\LectureAuthor
+\let\РЎРѕР·РґР°С‚СЊР—Р°РіРѕР»РѕРІРѕРєР›РµРєС†РёРё=\CreateLectureTitle
 
 
-% мега определятор новых штук. Супер настраевымый
+% РјРµРіР° РѕРїСЂРµРґРµР»СЏС‚РѕСЂ РЅРѕРІС‹С… С€С‚СѓРє. РЎСѓРїРµСЂ РЅР°СЃС‚СЂР°РµРІС‹РјС‹Р№
 \newcommand{\newthm}[6]{%
 \newcounter{#1num}%
 \expandafter\newif\csname if@#1started\endcsname\csname @#1startedfalse\endcsname%
@@ -1206,8 +1275,8 @@
 \global\csname @#1startedtrue\endcsname%
 \interlinepenalty=100\refstepcounter{#1num}\@evrskip\noindent%
 {{#3{#2\hspace{1.1truemm}\arabic{#1num}.}}}\csname @#1choicer\endcsname}%
-\expandafter\def\csname к#1\endcsname{\global\csname @#1startedfalse\endcsname#6\endgroup\spacer\par\ignorespaces}%
-\expandafter\let\csname end#1\expandafter\endcsname\csname к#1\endcsname%
+\expandafter\def\csname Рє#1\endcsname{\global\csname @#1startedfalse\endcsname#6\endgroup\spacer\par\ignorespaces}%
+\expandafter\let\csname end#1\expandafter\endcsname\csname Рє#1\endcsname%
 }
 \newcommand{\newdfn}[6]{%
 \expandafter\newif\csname if@#1started\endcsname\csname @#1startedfalse\endcsname%
@@ -1219,88 +1288,93 @@
 \global\csname @#1startedtrue\endcsname%
 \interlinepenalty=100\@evrskip\noindent%
 {{#3{#2}}}\csname @#1choicer\endcsname}%
-\expandafter\def\csname к#1\endcsname{\global\csname @#1startedfalse\endcsname#6\endgroup\spacer\par\ignorespaces}%
-\expandafter\let\csname end#1\expandafter\endcsname\csname к#1\endcsname%
+\expandafter\def\csname Рє#1\endcsname{\global\csname @#1startedfalse\endcsname#6\endgroup\spacer\par\ignorespaces}%
+\expandafter\let\csname end#1\expandafter\endcsname\csname Рє#1\endcsname%
 }
 \newcommand{\synDfn}[2]{%
 \expandafter\let\csname #1\expandafter\endcsname\csname #2\endcsname%
 \expandafter\let\csname end#1\expandafter\endcsname\csname end#2\endcsname%
-\expandafter\let\csname к#1\expandafter\endcsname\csname end#2\endcsname%
+\expandafter\let\csname Рє#1\expandafter\endcsname\csname end#2\endcsname%
 \expandafter\let\csname e#1\expandafter\endcsname\csname end#2\endcsname%
 }
 
 
-\newthm{аксиома}{Аксиома}{\bf}{\it}{\rm}{}
-\newthm{теорема}{Теорема}{\scshape}{\rm}{\itshape}{}
-\newthm{лемма}{Лемма}{\scshape}{\rm}{\itshape}{}
-\newthm{предложение}{Предложение}{\scshape}{\rm}{\itshape}{}
-\newthm{определение}{Определение}{\bf}{\it}{\rm}{}
-\newthm{пример}{Пример}{\bf}{\it}{\rm}{}
-\newthm{упражнение}{Упражнение}{\bf}{\it}{\rm}{}
-\newthm{замечание}{Замечание}{\bf}{\it}{\rm}{}
-\newthm{утверждение}{Утверждение}{\bf}{\it}{\rm}{}
-\newthm{факт}{Факт}{\bf}{\it}{\rm}{}
-\newthm{следствие}{Следствие}{\bf}{\it}{\rm}{}
-\newthm{соглашение}{Cоглашение}{\bf}{\it}{\rm}{}
-\newdfn{доказательство}{$\square$\hspace{1mm}\ignorespaces}{}{\it}{\rm}{$\blacksquare$}
-\newdfn{решение}{Решение.}{\bf}{\it}{\rm}{$\blacksquare$}
-\newdfn{указание}{Указание.}{\bf}{\it}{\rm}{}
-\newdfn{ответ}{Ответ:}{\bf}{\it}{\rm}{}
-\synDfn{акс}{аксиома}
-\synDfn{теор}{теорема}
-\synDfn{лем}{лемма}
-\synDfn{пред}{предложение}
-\synDfn{опр}{определение}
-\synDfn{прим}{пример}
-\synDfn{упр}{упражнение}
-\synDfn{зам}{замечание}
-\synDfn{утв}{утверждение}
-\synDfn{след}{следствие}
-\synDfn{согл}{соглашение}
-\synDfn{док}{доказательство}
-\synDfn{реш}{решение}
-\synDfn{указ}{указание}
-\synDfn{отв}{ответ}
-\synDfn{axiom}{аксиома}
-\synDfn{theorem}{теорема}
-\synDfn{lemma}{лемма}
-\synDfn{proposition}{предложение}
-\synDfn{definition}{определение}
-\synDfn{example}{пример}
-\synDfn{exercise}{упражнение}
-\synDfn{remark}{замечание}
-\synDfn{assertion}{утверждение}
-\synDfn{fact}{факт}
-\synDfn{corollary}{следствие}
-\synDfn{agreement}{соглашение}
-\synDfn{proof}{доказательство}
-\synDfn{solution}{решение}
-\synDfn{suggestion}{указание}
-\synDfn{answer}{ответ}
-\synDfn{axm}{аксиома}
-\synDfn{thm}{теорема}
-\synDfn{lem}{лемма}
-\synDfn{prop}{предложение}
-\synDfn{dfn}{определение}
-\synDfn{ex}{пример}
-\synDfn{exc}{упражнение}
-\synDfn{rem}{замечание}
-\synDfn{asrt}{утверждение}
-\synDfn{fact}{факт}
-\synDfn{cor}{следствие}
-\synDfn{agr}{соглашение}
-\synDfn{prf}{доказательство}
-\synDfn{sol}{решение}
-\synDfn{sug}{указание}
-\synDfn{ans}{ответ}
+\def\theAxiom{РђРєСЃРёРѕРјР°}
+\def\theTheorem{РўРµРѕСЂРµРјР°}
+\def\theLemma{Р›РµРјРјР°}
+\def\theProposition{РџСЂРµРґР»РѕР¶РµРЅРёРµ}
+\def\theDefinition{РћРїСЂРµРґРµР»РµРЅРёРµ}
+\def\theExample{РџСЂРёРјРµСЂ}
+\def\theExercise{РЈРїСЂР°Р¶РЅРµРЅРёРµ}
+\def\theRemark{Р—Р°РјРµС‡Р°РЅРёРµ}
+\def\theAssertion{РЈС‚РІРµСЂР¶РґРµРЅРёРµ}
+\def\theFact{Р¤Р°РєС‚}
+\def\theCorollary{РЎР»РµРґСЃС‚РІРёРµ}
+\def\theAgreement{РЎРѕРіР»Р°С€РµРЅРёРµ}
+\def\theProof{Р”РѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІРѕ}
+\def\theSolution{Р РµС€РµРЅРёРµ.}
+\def\theSuggestion{РЈРєР°Р·Р°РЅРёРµ.}
+\def\theAnswer{РћС‚РІРµС‚:}
+
+
+\newthm{axiom}{\theAxiom}{\bf}{\it}{\rm}{}
+\newthm{theorem}{\theTheorem}{\scshape}{\rm}{\itshape}{}
+\newthm{lemma}{\theLemma}{\scshape}{\rm}{\itshape}{}
+\newthm{proposition}{\theProposition}{\scshape}{\rm}{\itshape}{}
+\newthm{definition}{\theDefinition}{\bf}{\it}{\rm}{}
+\newthm{example}{\theExample}{\bf}{\it}{\rm}{}
+\newthm{exercise}{\theExercise}{\bf}{\it}{\rm}{}
+\newthm{remark}{\theRemark}{\bf}{\it}{\rm}{}
+\newthm{assertion}{\theAssertion}{\bf}{\it}{\rm}{}
+\newthm{fact}{\theFact}{\bf}{\it}{\rm}{}
+\newthm{corollary}{\theCorollary}{\bf}{\it}{\rm}{}
+\newthm{agreement}{\theAgreement}{\bf}{\it}{\rm}{}
+\newdfn{solution}{\theSolution}{\bf}{\it}{\rm}{$\blacksquare$}
+\newdfn{suggestion}{\theSuggestion}{\bf}{\it}{\rm}{}
+\newdfn{answer}{\theAnswer}{\bf}{\it}{\rm}{}
+\newdfn{proof}{$\square$\hspace{1mm}\ignorespaces}{}{\it}{\rm}{$\blacksquare$}
+
+
+\synDfn{Р°РєСЃ}{axiom}          \synDfn{axm}{axiom}           \synDfn{Р°РєСЃРёРѕРјР°}{axiom}
+\synDfn{С‚РµРѕСЂ}{theorem}       \synDfn{thm}{theorem}         \synDfn{С‚РµРѕСЂРµРјР°}{theorem}
+\synDfn{Р»РµРј}{lemma}          \synDfn{lem}{lemma}           \synDfn{Р»РµРјРјР°}{lemma}
+\synDfn{РїСЂРµРґ}{proposition}   \synDfn{prop}{proposition}    \synDfn{РїСЂРµРґР»РѕР¶РµРЅРёРµ}{proposition}
+\synDfn{РѕРїСЂ}{definition}     \synDfn{dfn}{definition}      \synDfn{РѕРїСЂРµРґРµР»РµРЅРёРµ}{definition}
+\synDfn{РїСЂРёРј}{example}       \synDfn{ex}{example}          \synDfn{РїСЂРёРјРµСЂ}{example}
+\synDfn{СѓРїСЂ}{exercise}       \synDfn{exc}{exercise}        \synDfn{СѓРїСЂР°Р¶РЅРµРЅРёРµ}{exercise}
+\synDfn{Р·Р°Рј}{remark}         \synDfn{rem}{remark}          \synDfn{Р·Р°РјРµС‡Р°РЅРёРµ}{remark}
+\synDfn{СѓС‚РІ}{assertion}      \synDfn{asrt}{assertion}      \synDfn{СѓС‚РІРµСЂР¶РґРµРЅРёРµ}{assertion}
+\synDfn{С„Р°РєС‚}{fact}          \synDfn{fact}{fact}           %\synDfn{С„Р°РєС‚}{fact}
+\synDfn{СЃР»РµРґ}{corollary}     \synDfn{cor}{corollary}       \synDfn{СЃР»РµРґСЃС‚РІРёРµ}{corollary}
+\synDfn{СЃРѕРіР»}{agreement}     \synDfn{agr}{agreement}       \synDfn{СЃРѕРіР»Р°С€РµРЅРёРµ}{agreement}
+\synDfn{СЂРµС€}{solution}       \synDfn{sol}{solution}        \synDfn{СЂРµС€РµРЅРёРµ}{solution}
+\synDfn{СѓРєР°Р·}{suggestion}    \synDfn{sug}{suggestion}      \synDfn{СѓРєР°Р·Р°РЅРёРµ}{suggestion}
+\synDfn{РѕС‚РІ}{answer}         \synDfn{ans}{answer}          \synDfn{РѕС‚РІРµС‚}{answer}
+\synDfn{РґРѕРє}{proof}          \synDfn{prf}{proof}           \synDfn{РґРѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІРѕ}{proof}
+
+
+
+
+\newif\ifhidesol\hidesolfalse
+\newcommand{\solsep}{\@ifnextchar[{\solsepw}{\solsepd}}
+\def\solsepw[#1]{
+\ifhidesol\else
+\setlength{\@tmp}{#1}%
+\setlength{\@ttmp}{\textwidth}%
+\addtolength{\@ttmp}{-\@tmp}%
+\spacer\hrule width \@ttmp\spacer\fi}
+\def\solsepd{\ifhidesol\else\spacer\hrule\spacer\fi}
+\let\СЂР°Р·РґРµР»РёС‚РµР»СЊ=\solsep
+\newcommand{\hidesol}{\long\def\СЂРµС€РµРЅРёРµ##1\РєСЂРµС€РµРЅРёРµ{}\long\def\РѕС‚РІРµС‚##1\РєРѕС‚РІРµС‚{}\hidesoltrue}
+\let\СЃРєСЂС‹С‚СЊР РµС€РµРЅРёСЏ=\hidesol
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Диаграммы Юнга
+% Р”РёР°РіСЂР°РјРјС‹ Р®РЅРіР°
 % ===============================================================
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ДИАГРАММЫ ЮНГА
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Р”РРђР“Р РђРњРњР« Р®РќР“Рђ
 %
 % This defines \DY{<partiation>} , \DYT{<partiation>} and
 % \sDY{<partiation>} , \sDYT{<partiation>} macros for
@@ -1354,7 +1428,7 @@
 
 
 % ===============================================================
-% Операторы
+% РћРїРµСЂР°С‚РѕСЂС‹
 % ===============================================================
 % ===============================================================
 % Algebraic operators
@@ -1383,7 +1457,7 @@
 \DeclareMathOperator{\dom}{dom}
 \DeclareMathOperator{\grad}{grad}
 \DeclareMathOperator{\Graph}{Graph}
-\DeclareMathOperator{\GCD}{\mathrm{НОД}}
+\DeclareMathOperator{\GCD}{\mathrm{РќРћР”}}
 \DeclareMathOperator{\End}{End}
 \DeclareMathOperator{\extr}{extr}
 \DeclareMathOperator{\epig}{epi}
@@ -1397,7 +1471,7 @@
 \DeclareMathOperator{\Isom}{Isom}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\Law}{Law}
-\DeclareMathOperator{\LCM}{\mathrm{НОК}}
+\DeclareMathOperator{\LCM}{\mathrm{РќРћРљ}}
 \DeclareMathOperator{\Lin}{Lin}
 \DeclareMathOperator{\Ln}{Ln}
 \DeclareMathOperator{\mes}{mes}
@@ -1448,7 +1522,7 @@
 
 
 % ===============================================================
-% Списки и перечни
+% РЎРїРёСЃРєРё Рё РїРµСЂРµС‡РЅРё
 % ===============================================================
 \newenvironment{nums}[1]
 {\vspace{-2truemm}\begin{enumerate}
@@ -1472,25 +1546,25 @@
 
 
 
-\newcommand{\Таа}[2]
+\newcommand{\РўР°Р°}[2]
 {\spacer\noindent%
 \begin{minipage}{.5\textwidth}\noindent#1\end{minipage}%
 \begin{minipage}{.5\textwidth}\noindent#2\end{minipage}%
 \spacer}
-\newcommand{\Тааа}[3]
+\newcommand{\РўР°Р°Р°}[3]
 {\par\spacer\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.33333\textwidth}\noindent#1\end{minipage}%
 \begin{minipage}{.33333\textwidth}\noindent#2\end{minipage}%
 \begin{minipage}{.33334\textwidth}\noindent#3\end{minipage}%
 }\spacer}
-\newcommand{\Таааа}[4]
+\newcommand{\РўР°Р°Р°Р°}[4]
 {\par\spacer\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.25\textwidth}\noindent#1\end{minipage}%
 \begin{minipage}{.25\textwidth}\noindent#2\end{minipage}%
 \begin{minipage}{.25\textwidth}\noindent#3\end{minipage}%
 \begin{minipage}{.25\textwidth}\noindent#4\end{minipage}%
 }\spacer}
-\newcommand{\Тааааа}[5]
+\newcommand{\РўР°Р°Р°Р°Р°}[5]
 {\par\spacer\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.2\textwidth}\noindent#1\end{minipage}%
 \begin{minipage}{.2\textwidth}\noindent#2\end{minipage}%
@@ -1498,7 +1572,7 @@
 \begin{minipage}{.2\textwidth}\noindent#4\end{minipage}%
 \begin{minipage}{.2\textwidth}\noindent#5\end{minipage}%
 }\spacer}
-\newcommand{\Таааааа}[6]
+\newcommand{\РўР°Р°Р°Р°Р°Р°}[6]
 {\par\spacer\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.166\textwidth}\noindent#1\end{minipage}%
 \begin{minipage}{.166\textwidth}\noindent#2\end{minipage}%
@@ -1507,25 +1581,25 @@
 \begin{minipage}{.166\textwidth}\noindent#5\end{minipage}%
 \begin{minipage}{.167\textwidth}\noindent#6\end{minipage}%
 }\spacer}
-\newcommand{\таа}[2]
+\newcommand{\С‚Р°Р°}[2]
 {\par\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.5\textwidth}\strut\noindent#1\end{minipage}%
 \begin{minipage}{.5\textwidth}\strut\noindent#2\end{minipage}%
 }\par}
-\newcommand{\тааа}[3]
+\newcommand{\С‚Р°Р°Р°}[3]
 {\par\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.33333\textwidth}\strut\noindent#1\end{minipage}%
 \begin{minipage}{.33333\textwidth}\strut\noindent#2\end{minipage}%
 \begin{minipage}{.33334\textwidth}\strut\noindent#3\end{minipage}%
 }\par}
-\newcommand{\таааа}[4]
+\newcommand{\С‚Р°Р°Р°Р°}[4]
 {\par\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.25\textwidth}\strut\noindent#1\end{minipage}%
 \begin{minipage}{.25\textwidth}\strut\noindent#2\end{minipage}%
 \begin{minipage}{.25\textwidth}\strut\noindent#3\end{minipage}%
 \begin{minipage}{.25\textwidth}\strut\noindent#4\end{minipage}%
 }\par}
-\newcommand{\тааааа}[5]
+\newcommand{\С‚Р°Р°Р°Р°Р°}[5]
 {\par\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.2\textwidth}\strut\noindent#1\end{minipage}%
 \begin{minipage}{.2\textwidth}\strut\noindent#2\end{minipage}%
@@ -1533,7 +1607,7 @@
 \begin{minipage}{.2\textwidth}\strut\noindent#4\end{minipage}%
 \begin{minipage}{.2\textwidth}\strut\noindent#5\end{minipage}%
 }\par}
-\newcommand{\таааааа}[6]
+\newcommand{\С‚Р°Р°Р°Р°Р°Р°}[6]
 {\par\noindent\hbox to .95\textwidth{%
 \begin{minipage}{.166\textwidth}\strut\noindent#1\end{minipage}%
 \begin{minipage}{.166\textwidth}\strut\noindent#2\end{minipage}%
@@ -1547,7 +1621,7 @@
 
 
 % ===============================================================
-% Буквы в разных начертаниях
+% Р‘СѓРєРІС‹ РІ СЂР°Р·РЅС‹С… РЅР°С‡РµСЂС‚Р°РЅРёСЏС…
 % ===============================================================
 % ===============================================================
 % Font: Bold Small Letters
@@ -1747,7 +1821,7 @@
 
 
 % ===============================================================
-% Греческие буквы
+% Р“СЂРµС‡РµСЃРєРёРµ Р±СѓРєРІС‹
 % ===============================================================
 \newcommand{\al}{\alpha}
 \newcommand{\be}{\beta}
@@ -1776,7 +1850,7 @@
 
 
 % ===============================================================
-% Укорочение и небольшие модификации частых комманд
+% РЈРєРѕСЂРѕС‡РµРЅРёРµ Рё РЅРµР±РѕР»СЊС€РёРµ РјРѕРґРёС„РёРєР°С†РёРё С‡Р°СЃС‚С‹С… РєРѕРјРјР°РЅРґ
 % ===============================================================
 % ===============================================================
 % Reductions
@@ -1836,7 +1910,7 @@
 
 
 % ===============================================================
-% Стрелки
+% РЎС‚СЂРµР»РєРё
 % ===============================================================
 % Arrows
 
@@ -1868,7 +1942,7 @@
 
 
 % ===============================================================
-% Многоточия, многоплюсия и т.д.
+% РњРЅРѕРіРѕС‚РѕС‡РёСЏ, РјРЅРѕРіРѕРїР»СЋСЃРёСЏ Рё С‚.Рґ.
 % ===============================================================
 \newcommand{\etc}{,\ldots}                                                              % et cetera
 \newcommand{\sco}{,\ldots,}                                                             % sequenced
@@ -1889,7 +1963,7 @@
 
 
 % ===============================================================
-% Скобки
+% РЎРєРѕР±РєРё
 % ===============================================================
 \newcommand{\nn}[1]{\Vert#1\Vert}                                                             % norm, normal size
 \newcommand{\nc}[1]{\{#1\}}                                                             % calligraphic, normal size
@@ -1985,16 +2059,16 @@
 
 
 % ===============================================================
-% Добавление картинок
+% Р”РѕР±Р°РІР»РµРЅРёРµ РєР°СЂС‚РёРЅРѕРє
 % ===============================================================
-%\putpicture{сдвиг по горизонтали}{сдвиг по вертикали}{файл картинки}
-%\putpict{сдвиг по горизонтали}{сдвиг по вертикали}{файл картинки}{подпись}
-%\risn  вставляет номер картинки
+%\putpicture{СЃРґРІРёРі РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё}{СЃРґРІРёРі РїРѕ РІРµСЂС‚РёРєР°Р»Рё}{С„Р°Р№Р» РєР°СЂС‚РёРЅРєРё}
+%\putpict{СЃРґРІРёРі РїРѕ РіРѕСЂРёР·РѕРЅС‚Р°Р»Рё}{СЃРґРІРёРі РїРѕ РІРµСЂС‚РёРєР°Р»Рё}{С„Р°Р№Р» РєР°СЂС‚РёРЅРєРё}{РїРѕРґРїРёСЃСЊ}
+%\risn  РІСЃС‚Р°РІР»СЏРµС‚ РЅРѕРјРµСЂ РєР°СЂС‚РёРЅРєРё
 \newcommand{\onlyput}[3]
 {\hspace*{#1}\raisebox{#2}[0truemm][0truemm]{\lefteqn{\smash{#3}}\hspace*{-#1}}}
 \newcommand{\putpicture}[3]
 {\hspace*{#1}\raisebox{#2}[0truemm][0truemm]{\lefteqn{\smash{\includegraphics{#3}}}\hspace*{-#1}}}
-\newcommand{\risn}{\refstepcounter{figcount}{\bf{Рис.\,\arabic{figcount}. }}}
+\newcommand{\risn}{\refstepcounter{figcount}{\bf{Р РёСЃ.\,\arabic{figcount}. }}}
 \newcounter{figcount}
 \newcommand{\putpict}[4]{\hspace*{#1}\raisebox{#2}[0truept][0truept]{\hbox to 0truecm{%
 \vbox to 0truecm{\vss\hbox to 0truecm{\hss{\includegraphics{#3}}\hss}\vskip -1.5truemm%
@@ -2010,7 +2084,7 @@
 
 
 % ===============================================================
-% Добавление картинок от ДМВН
+% Р”РѕР±Р°РІР»РµРЅРёРµ РєР°СЂС‚РёРЅРѕРє РѕС‚ Р”РњР’Рќ
 % ===============================================================
 
 
@@ -2043,7 +2117,7 @@
 
 
 % Internal command
-\def\dmvnpic#1#2{\hbox{\vbox{\footnotesize\normalfont\halign{\hfil##\hfil\cr\dmvnpicmbox{#1}\cr\noalign{\medskip}Рис.~#2\cr}}}}
+\def\dmvnpic#1#2{\hbox{\vbox{\footnotesize\normalfont\halign{\hfil##\hfil\cr\dmvnpicmbox{#1}\cr\noalign{\medskip}Р РёСЃ.~#2\cr}}}}
 
 
 
@@ -2198,30 +2272,30 @@
 
 
 % ===============================================================
-% сходимости:
+% СЃС…РѕРґРёРјРѕСЃС‚Рё:
 % ===============================================================
 \newcommand{\convu}[1]{\stackrel{#1}{\rightrightarrows}}                                % conv.uniform
 \newcommand{\convs}{\stackrel{\mbox{\scriptsize\rm s}}{\longrightarrow}}                % conv.strongly
 \newcommand{\convw}{\stackrel{\mbox{\scriptsize\rm w}}{\longrightarrow}}                % conv.weak
 \newcommand{\convws}{\stackrel{*\mbox{\scriptsize\rm w}}{\longrightarrow}}              % conv.weak star
-\newcommand{\convas}{\stackrel{\mbox{\tiny\rm п.н.}}{\longrightarrow}}                  % conv.alm.surely.
-\newcommand{\convasu}{\stackrel{\mbox{\tiny\rm п.н.}}{\nearrow}}                        % conv.alm.surely.up
-\newcommand{\convasl}{\stackrel{\mbox{\tiny\rm п.н.}}{\searrow}}                        % conv.alm.surely.down
+\newcommand{\convas}{\stackrel{\mbox{\tiny\rm Рї.РЅ.}}{\longrightarrow}}                  % conv.alm.surely.
+\newcommand{\convasu}{\stackrel{\mbox{\tiny\rm Рї.РЅ.}}{\nearrow}}                        % conv.alm.surely.up
+\newcommand{\convasl}{\stackrel{\mbox{\tiny\rm Рї.РЅ.}}{\searrow}}                        % conv.alm.surely.down
 \newcommand{\convp}{\stackrel{\Pf}{\longrightarrow}}                                    % conv.probability
 \newcommand{\convd}{\stackrel{\Ds}{\longrightarrow}}                                    % conv.distribution
-\newcommand{\convae}{\stackrel{\mbox{\tiny\rm п.в.}}{\longrightarrow}}                  % conv.alm.everywhere
-\newcommand{\convaeu}{\stackrel{\mbox{\tiny\rm п.в.}}{\nearrow}}                        % conv.alm.everywhere.up
-\newcommand{\convael}{\stackrel{\mbox{\tiny\rm п.в.}}{\searrow}}                        % conv.alm.everywhere.down
-\newcommand{\eqas}{\stackrel{\mbox{\tiny\rm п.н.}}{=}}                                  % eq.alm.surely
+\newcommand{\convae}{\stackrel{\mbox{\tiny\rm Рї.РІ.}}{\longrightarrow}}                  % conv.alm.everywhere
+\newcommand{\convaeu}{\stackrel{\mbox{\tiny\rm Рї.РІ.}}{\nearrow}}                        % conv.alm.everywhere.up
+\newcommand{\convael}{\stackrel{\mbox{\tiny\rm Рї.РІ.}}{\searrow}}                        % conv.alm.everywhere.down
+\newcommand{\eqas}{\stackrel{\mbox{\tiny\rm Рї.РЅ.}}{=}}                                  % eq.alm.surely
 \newcommand{\eqdef}{\stackrel{\mbox{\tiny\rm def}}{=}}                                  % eq.by.def
-\newcommand{\eqae}{\stackrel{\mbox{\tiny\rm п.в.}}{=}}                                  % eq.alm.everywhere
+\newcommand{\eqae}{\stackrel{\mbox{\tiny\rm Рї.РІ.}}{=}}                                  % eq.alm.everywhere
 \newcommand{\eqvl}[2]{\stackrel{\mbox{\tiny\rm #1}}{\ol{\ol{\hbox to #2truept{}}}}}         % eq.variable.length
 %-----end----------end----------end----------end----------end----
 
 
 
 % ===============================================================
-% Если собеседования:
+% Р•СЃР»Рё СЃРѕР±РµСЃРµРґРѕРІР°РЅРёСЏ:
 % ===============================================================
 \newsavebox{\blok}
 \newsavebox{\blokk}
@@ -2247,28 +2321,28 @@
 
 
 \if@exam
-\ГраницыКондуитаПортрет
-\@listname={Занятие \the\@listnum}
-\def\theProblem{Задача\hspace{1.1truemm}\the\@listnum.}
+\Р“СЂР°РЅРёС†С‹РљРѕРЅРґСѓРёС‚Р°РџРѕСЂС‚СЂРµС‚
+\@listname={Р—Р°РЅСЏС‚РёРµ \the\@listnum}
+\def\theProblem{Р—Р°РґР°С‡Р°\hspace{1.1truemm}\the\@listnum.}
 \def\theListok{}
 \fi
 
 
 
 % ===============================================================
-% Если ВМШ:
+% Р•СЃР»Рё Р’РњРЁ:
 % ===============================================================
 \if@vmsh
-\ГраницыКондуитаПортрет
-\@listname={Занятие \the\@listnum}
-\def\theProblem{Задача\hspace{1.1truemm}\the\@listnum.}
-\def\theListok{Занятие \No\/}
+\Р“СЂР°РЅРёС†С‹РљРѕРЅРґСѓРёС‚Р°РџРѕСЂС‚СЂРµС‚
+\@listname={Р—Р°РЅСЏС‚РёРµ \the\@listnum}
+\def\theProblem{Р—Р°РґР°С‡Р°\hspace{1.1truemm}\the\@listnum.}
+\def\theListok{Р—Р°РЅСЏС‚РёРµ \No\/}
 \fi
 
 
 
 % ===============================================================
-% Если для алгебры:
+% Р•СЃР»Рё РґР»СЏ Р°Р»РіРµР±СЂС‹:
 % ===============================================================
 \if@algebra
 %\@listname={}
@@ -2277,14 +2351,14 @@
 %\def\theFullItem{\hbox to\@starspace{{{\ralph{itemnum})\the\@star}}\hfill}}
 %\def\theFullProblem{{{\theProblem\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
 \makeatletter
-\renewcommand{\@oddhead}{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap Страница \thepage}}}\fi}
+\renewcommand{\@oddhead}{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap РЎС‚СЂР°РЅРёС†Р° \thepage}}}\fi}
 \makeatother
 \fi
 
 
 
 % ===============================================================
-% Если для геометрии:
+% Р•СЃР»Рё РґР»СЏ РіРµРѕРјРµС‚СЂРёРё:
 % ===============================================================
 \if@geometry
 \def\theProblem{}
@@ -2293,22 +2367,22 @@
 %\def\theFullProblem{{\bf{\theProblem\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
 \def\theFullItem{\hbox to\@starspace{{{\ralph{itemnum})\the\@star}}\hfill}}
 \def\theFullProblem{{{\theProblem\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
-%\РазрыватьФормулы
-\renewcommand{\раздел}[1]{\spacer\spacer\centerline{#1}\spacer}
+%\Р Р°Р·СЂС‹РІР°С‚СЊР¤РѕСЂРјСѓР»С‹
+\renewcommand{\СЂР°Р·РґРµР»}[1]{\spacer\spacer\centerline{#1}\spacer}
 \makeatletter
-\renewcommand{\@oddhead}{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap Страница \thepage}}}\fi}
+\renewcommand{\@oddhead}{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap РЎС‚СЂР°РЅРёС†Р° \thepage}}}\fi}
 \makeatother
 \fi
 
 
 
 % ===============================================================
-% Для книги:
+% Р”Р»СЏ РєРЅРёРіРё:
 % ===============================================================
 \if@book
 \def\theFullProblem{{\bf{\theProblem\the\@listnum.\arabic{problemnum}\the\@star.}}\hspace{1.9truemm}}
 \renewcommand{\@oddhead}%
-{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\vbox{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap Страница \thepage}}\hrule}}\fi}
+{\ifnum\count0>1\raisebox{-15pt}[\headheight][0pt]{\vbox{\hbox to \textwidth{\strut\hbox to 0pt{\theFullListok} \hfil {\sf \the\@listname}\hfil \hbox to 0pt{\hss\llap РЎС‚СЂР°РЅРёС†Р° \thepage}}\hrule}}\fi}
 \renewcommand{\spacer}{\vspace{.9\smallskipamount}}
 \fi
 
@@ -2469,57 +2543,57 @@
 % ===============================================================
 % ===============================================================
 % ===============================================================
-% russadd        Начало
+% russadd        РќР°С‡Р°Р»Рѕ
 % ===============================================================
-% ------------------ команды типа \те (т.е.) --------------------
+% ------------------ РєРѕРјР°РЅРґС‹ С‚РёРїР° \С‚Рµ (С‚.Рµ.) --------------------
 
-% Набирайте "т.е." командой \те . Остальное -- аналогично.
-% Теперь можно не беспокоиться о пробелах после этих команд.
-% Например, можно наравне с
-%     ..., \те\ ...
-%     ..., \те{} ...
-% писать просто
-%     ..., \те ...
+% РќР°Р±РёСЂР°Р№С‚Рµ "С‚.Рµ." РєРѕРјР°РЅРґРѕР№ \С‚Рµ . РћСЃС‚Р°Р»СЊРЅРѕРµ -- Р°РЅР°Р»РѕРіРёС‡РЅРѕ.
+% РўРµРїРµСЂСЊ РјРѕР¶РЅРѕ РЅРµ Р±РµСЃРїРѕРєРѕРёС‚СЊСЃСЏ Рѕ РїСЂРѕР±РµР»Р°С… РїРѕСЃР»Рµ СЌС‚РёС… РєРѕРјР°РЅРґ.
+% РќР°РїСЂРёРјРµСЂ, РјРѕР¶РЅРѕ РЅР°СЂР°РІРЅРµ СЃ
+%     ..., \С‚Рµ\ ...
+%     ..., \С‚Рµ{} ...
+% РїРёСЃР°С‚СЊ РїСЂРѕСЃС‚Рѕ
+%     ..., \С‚Рµ ...
 %
 
-\newcommand*{\те}{т.\,е.\xspace}
-\newcommand*{\Те}{Т.\,е.\xspace}
-\newcommand*{\тк}{т.\,к.\xspace}
-\newcommand*{\Тк}{Т.\,к.\xspace}
-\newcommand*{\итд}{и~т.\,д.\xspace}
-\newcommand*{\итп}{и~т.\,п.\xspace}
-\newcommand{\лк}{\guillemotleft\nobreak\ignorespaces}
-\newcommand{\пк}{\guillemotright\xspace}
+\newcommand*{\С‚Рµ}{С‚.\,Рµ.\xspace}
+\newcommand*{\РўРµ}{Рў.\,Рµ.\xspace}
+\newcommand*{\С‚Рє}{С‚.\,Рє.\xspace}
+\newcommand*{\РўРє}{Рў.\,Рє.\xspace}
+\newcommand*{\РёС‚Рґ}{Рё~С‚.\,Рґ.\xspace}
+\newcommand*{\РёС‚Рї}{Рё~С‚.\,Рї.\xspace}
+\newcommand{\Р»Рє}{\guillemotleft\nobreak\ignorespaces}
+\newcommand{\РїРє}{\guillemotright\xspace}
 
 
 
 %
 
-% ------------------ команды типа \т (тире) ---------------------
-% Команда \клей позволяет приклеивать слова к формуле или ещё чему-нибудь.
-% Например, "частицы\клей $+$\клей поле"
-% Команды \д (\ч) и \Д (\ч) ставят дефисы (чёрточки), после которых
-% разрывы строки запрещены и разрешены, соответственно.
-% Итак,
-%   \д ставит дефис, после которого разрыв строки ЗАПРЕЩЁН.
-%         Напр., "$1$\д форма"
-%   \Д ставит дефис, после которого разрыв строки РАЗРЕШЁН.
-%         Напр., "Остроградского\ч Гаусса" (или тут нужно \Д ?)
-% Для интересующихся: если написать "$1$-форма" или "Остроградского--Гаусса",
-% то будет разрешено разрывать строчку после дефиса и запрещено переносить
-% слова "форма", "Остроградского" и "Гаусса". По этой причине и появилась
-% команда \клей.
+% ------------------ РєРѕРјР°РЅРґС‹ С‚РёРїР° \С‚ (С‚РёСЂРµ) ---------------------
+% РљРѕРјР°РЅРґР° \РєР»РµР№ РїРѕР·РІРѕР»СЏРµС‚ РїСЂРёРєР»РµРёРІР°С‚СЊ СЃР»РѕРІР° Рє С„РѕСЂРјСѓР»Рµ РёР»Рё РµС‰С‘ С‡РµРјСѓ-РЅРёР±СѓРґСЊ.
+% РќР°РїСЂРёРјРµСЂ, "С‡Р°СЃС‚РёС†С‹\РєР»РµР№ $+$\РєР»РµР№ РїРѕР»Рµ"
+% РљРѕРјР°РЅРґС‹ \Рґ (\С‡) Рё \Р” (\С‡) СЃС‚Р°РІСЏС‚ РґРµС„РёСЃС‹ (С‡С‘СЂС‚РѕС‡РєРё), РїРѕСЃР»Рµ РєРѕС‚РѕСЂС‹С…
+% СЂР°Р·СЂС‹РІС‹ СЃС‚СЂРѕРєРё Р·Р°РїСЂРµС‰РµРЅС‹ Рё СЂР°Р·СЂРµС€РµРЅС‹, СЃРѕРѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕ.
+% РС‚Р°Рє,
+%   \Рґ СЃС‚Р°РІРёС‚ РґРµС„РёСЃ, РїРѕСЃР»Рµ РєРѕС‚РѕСЂРѕРіРѕ СЂР°Р·СЂС‹РІ СЃС‚СЂРѕРєРё Р—РђРџР Р•Р©РЃРќ.
+%         РќР°РїСЂ., "$1$\Рґ С„РѕСЂРјР°"
+%   \Р” СЃС‚Р°РІРёС‚ РґРµС„РёСЃ, РїРѕСЃР»Рµ РєРѕС‚РѕСЂРѕРіРѕ СЂР°Р·СЂС‹РІ СЃС‚СЂРѕРєРё Р РђР—Р Р•РЁРЃРќ.
+%         РќР°РїСЂ., "РћСЃС‚СЂРѕРіСЂР°РґСЃРєРѕРіРѕ\С‡ Р“Р°СѓСЃСЃР°" (РёР»Рё С‚СѓС‚ РЅСѓР¶РЅРѕ \Р” ?)
+% Р”Р»СЏ РёРЅС‚РµСЂРµСЃСѓСЋС‰РёС…СЃСЏ: РµСЃР»Рё РЅР°РїРёСЃР°С‚СЊ "$1$-С„РѕСЂРјР°" РёР»Рё "РћСЃС‚СЂРѕРіСЂР°РґСЃРєРѕРіРѕ--Р“Р°СѓСЃСЃР°",
+% С‚Рѕ Р±СѓРґРµС‚ СЂР°Р·СЂРµС€РµРЅРѕ СЂР°Р·СЂС‹РІР°С‚СЊ СЃС‚СЂРѕС‡РєСѓ РїРѕСЃР»Рµ РґРµС„РёСЃР° Рё Р·Р°РїСЂРµС‰РµРЅРѕ РїРµСЂРµРЅРѕСЃРёС‚СЊ
+% СЃР»РѕРІР° "С„РѕСЂРјР°", "РћСЃС‚СЂРѕРіСЂР°РґСЃРєРѕРіРѕ" Рё "Р“Р°СѓСЃСЃР°". РџРѕ СЌС‚РѕР№ РїСЂРёС‡РёРЅРµ Рё РїРѕСЏРІРёР»Р°СЃСЊ
+% РєРѕРјР°РЅРґР° \РєР»РµР№.
 %
 
-\newcommand*{\клей}{\nobreak\hskip\z@skip}
-\DeclareRobustCommand*{\д}{\клей\hbox{-}\клей}
-\DeclareRobustCommand*{\Д}{\клей\hbox{-}\hskip\z@skip}
-\DeclareRobustCommand*{\ч}{\,\textendash\,\клей}
-\DeclareRobustCommand*{\ч}{\,\textendash\,\hskip\z@skip}
-\DeclareRobustCommand*{\т}{~\textemdash{} }
-\DeclareRobustCommand*{\Т}{~\textemdash{} }
+\newcommand*{\РєР»РµР№}{\nobreak\hskip\z@skip}
+\DeclareRobustCommand*{\Рґ}{\РєР»РµР№\hbox{-}\РєР»РµР№}
+\DeclareRobustCommand*{\Р”}{\РєР»РµР№\hbox{-}\hskip\z@skip}
+\DeclareRobustCommand*{\С‡}{\,\textendash\,\РєР»РµР№}
+\DeclareRobustCommand*{\С‡}{\,\textendash\,\hskip\z@skip}
+\DeclareRobustCommand*{\С‚}{~\textemdash{} }
+\DeclareRobustCommand*{\Рў}{~\textemdash{} }
 % ===============================================================
-% russadd        Конец
+% russadd        РљРѕРЅРµС†
 % ===============================================================
 % ===============================================================
 % ===============================================================
@@ -2530,7 +2604,7 @@
 % ===============================================================
 % ===============================================================
 % ===============================================================
-% mathlh.sty   Начало    Позволяет писать русские буквы в формулах
+% mathlh.sty   РќР°С‡Р°Р»Рѕ    РџРѕР·РІРѕР»СЏРµС‚ РїРёСЃР°С‚СЊ СЂСѓСЃСЃРєРёРµ Р±СѓРєРІС‹ РІ С„РѕСЂРјСѓР»Р°С…
 % ===============================================================
 %% \DeclareSymbolFont{roperators}      {T2A}{\rmdefault} {m}{n}
 %% \SetSymbolFont    {roperators}{bold}{T2A}{\rmdefault} {b}{n}
@@ -2539,76 +2613,76 @@
 \SetSymbolFont    {rletters}{bold}  {T2A}{\rmdefault}{b}{it}
 
 \expandafter\def\csname T2A-cmd\endcsname#1{\ifx\protect\@typeset@protect\else\noexpand#1\expandafter\@gobble\fi}
-\DeclareMathSymbol{^^c0}{\mathalpha}{rletters}{"C0} %% А
-\DeclareMathSymbol{^^c1}{\mathalpha}{rletters}{"C1} %% Б
-\DeclareMathSymbol{^^c2}{\mathalpha}{rletters}{"C2} %% В
-\DeclareMathSymbol{^^c3}{\mathalpha}{rletters}{"C3} %% Г
-\DeclareMathSymbol{^^c4}{\mathalpha}{rletters}{"C4} %% Д
-\DeclareMathSymbol{^^c5}{\mathalpha}{rletters}{"C5} %% Е
-\DeclareMathSymbol{^^c6}{\mathalpha}{rletters}{"C6} %% Ж
-\DeclareMathSymbol{^^c7}{\mathalpha}{rletters}{"C7} %% З
-\DeclareMathSymbol{^^c8}{\mathalpha}{rletters}{"C8} %% И
-\DeclareMathSymbol{^^c9}{\mathalpha}{rletters}{"C9} %% Й
-\DeclareMathSymbol{^^ca}{\mathalpha}{rletters}{"CA} %% К
-\DeclareMathSymbol{^^cb}{\mathalpha}{rletters}{"CB} %% Л
-\DeclareMathSymbol{^^cc}{\mathalpha}{rletters}{"CC} %% М
-\DeclareMathSymbol{^^cd}{\mathalpha}{rletters}{"CD} %% Н
-\DeclareMathSymbol{^^ce}{\mathalpha}{rletters}{"CE} %% О
-\DeclareMathSymbol{^^cf}{\mathalpha}{rletters}{"CF} %% П
-\DeclareMathSymbol{^^d0}{\mathalpha}{rletters}{"D0} %% Р
-\DeclareMathSymbol{^^d1}{\mathalpha}{rletters}{"D1} %% С
-\DeclareMathSymbol{^^d2}{\mathalpha}{rletters}{"D2} %% Т
-\DeclareMathSymbol{^^d3}{\mathalpha}{rletters}{"D3} %% У
-\DeclareMathSymbol{^^d4}{\mathalpha}{rletters}{"D4} %% Ф
-\DeclareMathSymbol{^^d5}{\mathalpha}{rletters}{"D5} %% Х
-\DeclareMathSymbol{^^d6}{\mathalpha}{rletters}{"D6} %% Ц
-\DeclareMathSymbol{^^d7}{\mathalpha}{rletters}{"D7} %% Ч
-\DeclareMathSymbol{^^d8}{\mathalpha}{rletters}{"D8} %% Ш
-\DeclareMathSymbol{^^d9}{\mathalpha}{rletters}{"D9} %% Щ
-\DeclareMathSymbol{^^da}{\mathalpha}{rletters}{"DA} %% Ъ
-\DeclareMathSymbol{^^db}{\mathalpha}{rletters}{"DB} %% Ы
-\DeclareMathSymbol{^^dc}{\mathalpha}{rletters}{"DC} %% Ь
-\DeclareMathSymbol{^^dd}{\mathalpha}{rletters}{"DD} %% Э
-\DeclareMathSymbol{^^de}{\mathalpha}{rletters}{"DE} %% Ю
-\DeclareMathSymbol{^^df}{\mathalpha}{rletters}{"DF} %% Я
+\DeclareMathSymbol{^^c0}{\mathalpha}{rletters}{"C0} %% Рђ
+\DeclareMathSymbol{^^c1}{\mathalpha}{rletters}{"C1} %% Р‘
+\DeclareMathSymbol{^^c2}{\mathalpha}{rletters}{"C2} %% Р’
+\DeclareMathSymbol{^^c3}{\mathalpha}{rletters}{"C3} %% Р“
+\DeclareMathSymbol{^^c4}{\mathalpha}{rletters}{"C4} %% Р”
+\DeclareMathSymbol{^^c5}{\mathalpha}{rletters}{"C5} %% Р•
+\DeclareMathSymbol{^^c6}{\mathalpha}{rletters}{"C6} %% Р–
+\DeclareMathSymbol{^^c7}{\mathalpha}{rletters}{"C7} %% Р—
+\DeclareMathSymbol{^^c8}{\mathalpha}{rletters}{"C8} %% Р
+\DeclareMathSymbol{^^c9}{\mathalpha}{rletters}{"C9} %% Р™
+\DeclareMathSymbol{^^ca}{\mathalpha}{rletters}{"CA} %% Рљ
+\DeclareMathSymbol{^^cb}{\mathalpha}{rletters}{"CB} %% Р›
+\DeclareMathSymbol{^^cc}{\mathalpha}{rletters}{"CC} %% Рњ
+\DeclareMathSymbol{^^cd}{\mathalpha}{rletters}{"CD} %% Рќ
+\DeclareMathSymbol{^^ce}{\mathalpha}{rletters}{"CE} %% Рћ
+\DeclareMathSymbol{^^cf}{\mathalpha}{rletters}{"CF} %% Рџ
+\DeclareMathSymbol{^^d0}{\mathalpha}{rletters}{"D0} %% Р 
+\DeclareMathSymbol{^^d1}{\mathalpha}{rletters}{"D1} %% РЎ
+\DeclareMathSymbol{^^d2}{\mathalpha}{rletters}{"D2} %% Рў
+\DeclareMathSymbol{^^d3}{\mathalpha}{rletters}{"D3} %% РЈ
+\DeclareMathSymbol{^^d4}{\mathalpha}{rletters}{"D4} %% Р¤
+\DeclareMathSymbol{^^d5}{\mathalpha}{rletters}{"D5} %% РҐ
+\DeclareMathSymbol{^^d6}{\mathalpha}{rletters}{"D6} %% Р¦
+\DeclareMathSymbol{^^d7}{\mathalpha}{rletters}{"D7} %% Р§
+\DeclareMathSymbol{^^d8}{\mathalpha}{rletters}{"D8} %% РЁ
+\DeclareMathSymbol{^^d9}{\mathalpha}{rletters}{"D9} %% Р©
+\DeclareMathSymbol{^^da}{\mathalpha}{rletters}{"DA} %% РЄ
+\DeclareMathSymbol{^^db}{\mathalpha}{rletters}{"DB} %% Р«
+\DeclareMathSymbol{^^dc}{\mathalpha}{rletters}{"DC} %% Р¬
+\DeclareMathSymbol{^^dd}{\mathalpha}{rletters}{"DD} %% Р­
+\DeclareMathSymbol{^^de}{\mathalpha}{rletters}{"DE} %% Р®
+\DeclareMathSymbol{^^df}{\mathalpha}{rletters}{"DF} %% РЇ
 
-\DeclareMathSymbol{^^e0}{\mathalpha}{rletters}{"E0} %% а
-\DeclareMathSymbol{^^e1}{\mathalpha}{rletters}{"E1} %% б
-\DeclareMathSymbol{^^e2}{\mathalpha}{rletters}{"E2} %% в
-\DeclareMathSymbol{^^e3}{\mathalpha}{rletters}{"E3} %% г
-\DeclareMathSymbol{^^e4}{\mathalpha}{rletters}{"E4} %% д
-\DeclareMathSymbol{^^e5}{\mathalpha}{rletters}{"E5} %% е
-\DeclareMathSymbol{^^e6}{\mathalpha}{rletters}{"E6} %% ж
-\DeclareMathSymbol{^^e7}{\mathalpha}{rletters}{"E7} %% з
-\DeclareMathSymbol{^^e8}{\mathalpha}{rletters}{"E8} %% и
-\DeclareMathSymbol{^^e9}{\mathalpha}{rletters}{"E9} %% й
-\DeclareMathSymbol{^^ea}{\mathalpha}{rletters}{"EA} %% к
-\DeclareMathSymbol{^^eb}{\mathalpha}{rletters}{"EB} %% л
-\DeclareMathSymbol{^^ec}{\mathalpha}{rletters}{"EC} %% м
-\DeclareMathSymbol{^^ed}{\mathalpha}{rletters}{"ED} %% н
-\DeclareMathSymbol{^^ee}{\mathalpha}{rletters}{"EE} %% о
-\DeclareMathSymbol{^^ef}{\mathalpha}{rletters}{"EF} %% п
-\DeclareMathSymbol{^^f0}{\mathalpha}{rletters}{"F0} %% р
-\DeclareMathSymbol{^^f1}{\mathalpha}{rletters}{"F1} %% с
-\DeclareMathSymbol{^^f2}{\mathalpha}{rletters}{"F2} %% т
-\DeclareMathSymbol{^^f3}{\mathalpha}{rletters}{"F3} %% у
-\DeclareMathSymbol{^^f4}{\mathalpha}{rletters}{"F4} %% ф
-\DeclareMathSymbol{^^f5}{\mathalpha}{rletters}{"F5} %% х
-\DeclareMathSymbol{^^f6}{\mathalpha}{rletters}{"F6} %% ц
-\DeclareMathSymbol{^^f7}{\mathalpha}{rletters}{"F7} %% ч
-\DeclareMathSymbol{^^f8}{\mathalpha}{rletters}{"F8} %% ш
-\DeclareMathSymbol{^^f9}{\mathalpha}{rletters}{"F9} %% щ
-\DeclareMathSymbol{^^fa}{\mathalpha}{rletters}{"FA} %% ъ
-\DeclareMathSymbol{^^fb}{\mathalpha}{rletters}{"FB} %% ы
-\DeclareMathSymbol{^^fc}{\mathalpha}{rletters}{"FC} %% ь
-\DeclareMathSymbol{^^fd}{\mathalpha}{rletters}{"FD} %% э
-\DeclareMathSymbol{^^fe}{\mathalpha}{rletters}{"FE} %% ю
-\DeclareMathSymbol{^^ff}{\mathalpha}{rletters}{"FF} %% я
+\DeclareMathSymbol{^^e0}{\mathalpha}{rletters}{"E0} %% Р°
+\DeclareMathSymbol{^^e1}{\mathalpha}{rletters}{"E1} %% Р±
+\DeclareMathSymbol{^^e2}{\mathalpha}{rletters}{"E2} %% РІ
+\DeclareMathSymbol{^^e3}{\mathalpha}{rletters}{"E3} %% Рі
+\DeclareMathSymbol{^^e4}{\mathalpha}{rletters}{"E4} %% Рґ
+\DeclareMathSymbol{^^e5}{\mathalpha}{rletters}{"E5} %% Рµ
+\DeclareMathSymbol{^^e6}{\mathalpha}{rletters}{"E6} %% Р¶
+\DeclareMathSymbol{^^e7}{\mathalpha}{rletters}{"E7} %% Р·
+\DeclareMathSymbol{^^e8}{\mathalpha}{rletters}{"E8} %% Рё
+\DeclareMathSymbol{^^e9}{\mathalpha}{rletters}{"E9} %% Р№
+\DeclareMathSymbol{^^ea}{\mathalpha}{rletters}{"EA} %% Рє
+\DeclareMathSymbol{^^eb}{\mathalpha}{rletters}{"EB} %% Р»
+\DeclareMathSymbol{^^ec}{\mathalpha}{rletters}{"EC} %% Рј
+\DeclareMathSymbol{^^ed}{\mathalpha}{rletters}{"ED} %% РЅ
+\DeclareMathSymbol{^^ee}{\mathalpha}{rletters}{"EE} %% Рѕ
+\DeclareMathSymbol{^^ef}{\mathalpha}{rletters}{"EF} %% Рї
+\DeclareMathSymbol{^^f0}{\mathalpha}{rletters}{"F0} %% СЂ
+\DeclareMathSymbol{^^f1}{\mathalpha}{rletters}{"F1} %% СЃ
+\DeclareMathSymbol{^^f2}{\mathalpha}{rletters}{"F2} %% С‚
+\DeclareMathSymbol{^^f3}{\mathalpha}{rletters}{"F3} %% Сѓ
+\DeclareMathSymbol{^^f4}{\mathalpha}{rletters}{"F4} %% С„
+\DeclareMathSymbol{^^f5}{\mathalpha}{rletters}{"F5} %% С…
+\DeclareMathSymbol{^^f6}{\mathalpha}{rletters}{"F6} %% С†
+\DeclareMathSymbol{^^f7}{\mathalpha}{rletters}{"F7} %% С‡
+\DeclareMathSymbol{^^f8}{\mathalpha}{rletters}{"F8} %% С€
+\DeclareMathSymbol{^^f9}{\mathalpha}{rletters}{"F9} %% С‰
+\DeclareMathSymbol{^^fa}{\mathalpha}{rletters}{"FA} %% СЉ
+\DeclareMathSymbol{^^fb}{\mathalpha}{rletters}{"FB} %% С‹
+\DeclareMathSymbol{^^fc}{\mathalpha}{rletters}{"FC} %% СЊ
+\DeclareMathSymbol{^^fd}{\mathalpha}{rletters}{"FD} %% СЌ
+\DeclareMathSymbol{^^fe}{\mathalpha}{rletters}{"FE} %% СЋ
+\DeclareMathSymbol{^^ff}{\mathalpha}{rletters}{"FF} %% СЏ
 
-\DeclareMathSymbol{^^9c}{\mathalpha}{rletters}{"9C} %% Ё
-\DeclareMathSymbol{^^bc}{\mathalpha}{rletters}{"BC} %% ё
-\DeclareMathSymbol{^^a8}{\mathalpha}{rletters}{"A8} %% Ё
-\DeclareMathSymbol{^^b8}{\mathalpha}{rletters}{"B8} %% ё
+\DeclareMathSymbol{^^9c}{\mathalpha}{rletters}{"9C} %% РЃ
+\DeclareMathSymbol{^^bc}{\mathalpha}{rletters}{"BC} %% С‘
+\DeclareMathSymbol{^^a8}{\mathalpha}{rletters}{"A8} %% РЃ
+\DeclareMathSymbol{^^b8}{\mathalpha}{rletters}{"B8} %% С‘
 
 \SetMathAlphabet{\mathrm}{normal}{T2A}{\rmdefault}{m}{n}
 \SetMathAlphabet{\mathrm}{bold}  {T2A}{\rmdefault}{b}{n}
@@ -2617,7 +2691,7 @@
 \SetMathAlphabet{\mathbf}{normal}{T2A}{\rmdefault}{b}{n}
 \SetMathAlphabet{\mathbf}{bold}  {T2A}{\rmdefault}{b}{n}
 % ===============================================================
-% mathlh.sty   Конец
+% mathlh.sty   РљРѕРЅРµС†
 % ===============================================================
 % ===============================================================
 % ===============================================================
@@ -2635,7 +2709,7 @@
 % ===============================================================
 % ===============================================================
 % ===============================================================
-% russcorr      Начало         Приводим оформление к нашему стилю
+% russcorr      РќР°С‡Р°Р»Рѕ         РџСЂРёРІРѕРґРёРј РѕС„РѕСЂРјР»РµРЅРёРµ Рє РЅР°С€РµРјСѓ СЃС‚РёР»СЋ
 % ===============================================================
 %%% Style options
 %%%
@@ -2662,36 +2736,36 @@
 \DeclareMathSymbol{\geqslant}{\mathrel}{AMSa}{"3E}
 
 \message{heading names,}
-\def\contentsname{Оглавление}
-\def\figurename{Рис.}
-\def\partname{Часть}
-\def\listfigurename{Список рисунков}
-\def\listtablename{Список таблиц}
-\def\refname{Литература}
-\def\bibname{Литература}
-\def\indexname{Предметный указатель}
-\def\tablename{Таблица}
-\def\abstractname{Аннотация}
-\@ifundefined{chapter}{}{\def\chaptername{Глава}}
-\def\proofname{Доказательство}
+\def\contentsname{РћРіР»Р°РІР»РµРЅРёРµ}
+\def\figurename{Р РёСЃ.}
+\def\partname{Р§Р°СЃС‚СЊ}
+\def\listfigurename{РЎРїРёСЃРѕРє СЂРёСЃСѓРЅРєРѕРІ}
+\def\listtablename{РЎРїРёСЃРѕРє С‚Р°Р±Р»РёС†}
+\def\refname{Р›РёС‚РµСЂР°С‚СѓСЂР°}
+\def\bibname{Р›РёС‚РµСЂР°С‚СѓСЂР°}
+\def\indexname{РџСЂРµРґРјРµС‚РЅС‹Р№ СѓРєР°Р·Р°С‚РµР»СЊ}
+\def\tablename{РўР°Р±Р»РёС†Р°}
+\def\abstractname{РђРЅРЅРѕС‚Р°С†РёСЏ}
+\@ifundefined{chapter}{}{\def\chaptername{Р“Р»Р°РІР°}}
+\def\proofname{Р”РѕРєР°Р·Р°С‚РµР»СЊСЃС‚РІРѕ}
 %%
 \message{counters,}
 \def\ralph#1{\@ralph{\@nameuse {c@#1}}}
-\def\@ralph#1{\ifcase #1\or а\or б\or в\or г\or д\or е\or ж\or з\or
-и\else\@iralph{#1}\fi
+\def\@ralph#1{\ifcase #1\or Р°\or Р±\or РІ\or Рі\or Рґ\or Рµ\or Р¶\or Р·\or
+Рё\else\@iralph{#1}\fi
 }
 \def\@iralph#1{\ifcase #1\or\or\or\or\or\or\or\or\or\or
-     к\or л\or м\or н\or о\or п\or р\or с\or т\or у\or
-     ф\or х\or ц\or ч\or ш\or щ\or э\or ю\or я\else\@ctrerr
+     Рє\or Р»\or Рј\or РЅ\or Рѕ\or Рї\or СЂ\or СЃ\or С‚\or Сѓ\or
+     С„\or С…\or С†\or С‡\or С€\or С‰\or СЌ\or СЋ\or СЏ\else\@ctrerr
      \fi}
 \def\Ralph#1{\@Ralph{\@nameuse {c@#1}}}
 \def\@Ralph#1{\ifcase #1%
-     \or А\or Б\or В\or Г\or Д\or Е\or Ж\or З\or
-     И\else\@iRalph{#1}\fi}
+     \or Рђ\or Р‘\or Р’\or Р“\or Р”\or Р•\or Р–\or Р—\or
+     Р\else\@iRalph{#1}\fi}
 \def\@iRalph#1{\ifcase #1%
-     \or\or\or\or\or\or\or\or\or\or К\or Л\or М\or
-     Н\or О\or П\or Р\or С\or Т\or У\or Ф\or Х\or Ц\or
-     Ч\or Ш\or Щ\or Э\or Ю\or Я\else\@ctrerr
+     \or\or\or\or\or\or\or\or\or\or Рљ\or Р›\or Рњ\or
+     Рќ\or Рћ\or Рџ\or Р \or РЎ\or Рў\or РЈ\or Р¤\or РҐ\or Р¦\or
+     Р§\or РЁ\or Р©\or Р­\or Р®\or РЇ\else\@ctrerr
      \fi}
 \newcommand*{\ipunct}[1]{\@ipunct{\@nameuse{c@#1}}}
 \newcommand*{\@ipunct}[1]%
@@ -2703,7 +2777,7 @@
 
 
 \message{lists,}
-% Теперь "русифицируем" окружение enumerate:
+% РўРµРїРµСЂСЊ "СЂСѓСЃРёС„РёС†РёСЂСѓРµРј" РѕРєСЂСѓР¶РµРЅРёРµ enumerate:
 \def\labelenumi{\theenumi.}
 \def\theenumii{\ralph{enumii}}
 \def\labelenumii{\theenumii.}
@@ -2712,19 +2786,19 @@
 \let\theenumiii\relax
 \def\p@enumiii{\theenumi\theenumii}
 %
-% И еще запретим вкладывать четыре enumerate друг в друга ...
+% Р РµС‰Рµ Р·Р°РїСЂРµС‚РёРј РІРєР»Р°РґС‹РІР°С‚СЊ С‡РµС‚С‹СЂРµ enumerate РґСЂСѓРі РІ РґСЂСѓРіР° ...
 %
-\def\enumerate{\ifnum \@enumdepth >2% было 3, а не 2
+\def\enumerate{\ifnum \@enumdepth >2% Р±С‹Р»Рѕ 3, Р° РЅРµ 2
 \@toodeep\else
       \advance\@enumdepth \@ne
       \edef\@enumctr{enum\romannumeral\the\@enumdepth}\list
       {\csname label\@enumctr\endcsname}{\usecounter
         {\@enumctr}\def\makelabel##1{\hss\llap{##1}}}\fi}
 %
-% Теперь определим окружение rlist
-% для создания списков, в которых
-% \item'ы нумеруются русскими буквами
-% (строчными для rlist, прописными для rlist[u])
+% РўРµРїРµСЂСЊ РѕРїСЂРµРґРµР»РёРј РѕРєСЂСѓР¶РµРЅРёРµ rlist
+% РґР»СЏ СЃРѕР·РґР°РЅРёСЏ СЃРїРёСЃРєРѕРІ, РІ РєРѕС‚РѕСЂС‹С…
+% \item'С‹ РЅСѓРјРµСЂСѓСЋС‚СЃСЏ СЂСѓСЃСЃРєРёРјРё Р±СѓРєРІР°РјРё
+% (СЃС‚СЂРѕС‡РЅС‹РјРё РґР»СЏ rlist, РїСЂРѕРїРёСЃРЅС‹РјРё РґР»СЏ rlist[u])
 %
 \@definecounter{rlistctr}
 \newif\if@rlistsnested\@rlistsnestedfalse
@@ -2968,11 +3042,11 @@
 \@ifclassloaded{article}{\@ArticleHeadingsCorr}{}
 \@ifclassloaded{report}{\@ReportHeadingsCorr}{}
 \@ifclassloaded{book}{\@BookHeadingsCorr}{}
-%% \if A\@mainstyle % стиль - article (вставлено ".\@aftersepkern" после номера)
+%% \if A\@mainstyle % СЃС‚РёР»СЊ - article (РІСЃС‚Р°РІР»РµРЅРѕ ".\@aftersepkern" РїРѕСЃР»Рµ РЅРѕРјРµСЂР°)
 %%   \@ArticleHeadingsCorr
-%% \else\if R\@mainstyle % стиль=report. Два пробела после точки заменены на один.
+%% \else\if R\@mainstyle % СЃС‚РёР»СЊ=report. Р”РІР° РїСЂРѕР±РµР»Р° РїРѕСЃР»Рµ С‚РѕС‡РєРё Р·Р°РјРµРЅРµРЅС‹ РЅР° РѕРґРёРЅ.
 %%   \@ReportHeadingsCorr
-%% \else % стиль=book (два пробела после точки заменены на один)
+%% \else % СЃС‚РёР»СЊ=book (РґРІР° РїСЂРѕР±РµР»Р° РїРѕСЃР»Рµ С‚РѕС‡РєРё Р·Р°РјРµРЅРµРЅС‹ РЅР° РѕРґРёРЅ)
 %%   \@BookHeadingsCorr
 %% \fi\fi
 %
@@ -2995,11 +3069,11 @@
 
 \message{\string\cleardoublepage,}
 \def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
-   {\null\ps@empty % добавил \ps@empty (и заодно заменил \hbox{} на \null )
+   {\null\ps@empty % РґРѕР±Р°РІРёР» \ps@empty (Рё Р·Р°РѕРґРЅРѕ Р·Р°РјРµРЅРёР» \hbox{} РЅР° \null )
 \newpage}\if@twocolumn{\null\ps@empty\newpage}\fi\fi\fi} % ditto
 
 \message{quotes,}
-% !!!! Отсюда и до второго вхождения !!!! все сперто из german.sty
+% !!!! РћС‚СЃСЋРґР° Рё РґРѕ РІС‚РѕСЂРѕРіРѕ РІС…РѕР¶РґРµРЅРёСЏ !!!! РІСЃРµ СЃРїРµСЂС‚Рѕ РёР· german.sty
 \def\@allowhyphens{\penalty\@M\hskip\z@skip}
 \def\set@low@box#1{\setbox\tw@\hbox{,}\setbox\z@\hbox{#1}\dimen\z@\ht\z@
      \advance\dimen\z@ -\ht\tw@
@@ -3020,27 +3094,27 @@
 \def\grq{\protect\@grq}
 % !!!!
 
-% \сегодня is the Russian counterpart of \today;
+% \СЃРµРіРѕРґРЅСЏ is the Russian counterpart of \today;
 % we prefer to keep the original \today intact
 \def\today{\number\day\space
                 \ifcase\month\or
-                 января\or февраля\or марта\or апреля\or мая\or
-                 июня\or июля\or августа\or сентября\or октября\or
-                 ноября\or декабря\fi\space\number\year}
-\let\сегодня=\today
+                 СЏРЅРІР°СЂСЏ\or С„РµРІСЂР°Р»СЏ\or РјР°СЂС‚Р°\or Р°РїСЂРµР»СЏ\or РјР°СЏ\or
+                 РёСЋРЅСЏ\or РёСЋР»СЏ\or Р°РІРіСѓСЃС‚Р°\or СЃРµРЅС‚СЏР±СЂСЏ\or РѕРєС‚СЏР±СЂСЏ\or
+                 РЅРѕСЏР±СЂСЏ\or РґРµРєР°Р±СЂСЏ\fi\space\number\year}
+\let\СЃРµРіРѕРґРЅСЏ=\today
 \def\mmyy{\number\month.\number\year}
-\let\ммгг=\mmyy
+\let\РјРјРіРі=\mmyy
 
 \frenchspacing
 \righthyphenmin 2
 
 %   \message{the letter `yo',}
-%   \def\@textyе{е}
-%   \def\@textyЕ{Е}
+%   \def\@textyРµ{Рµ}
+%   \def\@textyР•{Р•}
 %   \DeclareRobustCommand{\"}[1]{%
 %    {\edef\@tempa{#1}%
-%     \ifx\@tempa\@textyе \char 163\relax
-%       \else \ifx\@tempa\@textyЕ \char 176\relax
+%     \ifx\@tempa\@textyРµ \char 163\relax
+%       \else \ifx\@tempa\@textyР• \char 176\relax
 %         \else \accent "7F #1\fi\fi
 %    }%
 %   }
@@ -3058,7 +3132,7 @@
 %\AtBeginDocument{\ifdim\hsize<\@cclv\p@\pretolerance\m@ne\fi}
 
 % ===============================================================
-% russcorr      Конец
+% russcorr      РљРѕРЅРµС†
 % ===============================================================
 % ===============================================================
 % ===============================================================
@@ -3073,6 +3147,29 @@
 
 
 
+% ===============================================================
+% РђРЅРіР»РёР№СЃРєР°СЏ РІРµСЂСЃРёСЏ
+% ===============================================================
+\if@eng
+\def\theAxiom{Axiom}
+\def\theTheorem{Theorem}
+\def\theLemma{Lemma}
+\def\theProposition{Proposition}
+\def\theDefinition{Definition}
+\def\theExample{Example}
+\def\theExercise{Exercise}
+\def\theRemark{Remark}
+\def\theAssertion{Assertion}
+\def\theFact{Fact}
+\def\theCorollary{Corollary}
+\def\theAgreement{Agreement}
+\def\theProof{Proof}
+\def\theSolution{Solution.}
+\def\theSuggestion{Suggestion.}
+\def\theAnswer{Answer:}
+\def\theProblem{Problem\hspace{1.1truemm}}
+\let\ralph=\alph
+\fi
 
 
 
@@ -3084,7 +3181,7 @@
 
 
 % ===============================================================
-% Для юникода в PDF
+% Р”Р»СЏ СЋРЅРёРєРѕРґР° РІ PDF
 % ===============================================================
 \pdfgentounicode=1
 \pdfglyphtounicode{controlSTX}{0001}
